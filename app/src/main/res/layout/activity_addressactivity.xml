@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+
+
+<LinearLayout
+    android:id="@+id/bg"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="#fff"
+        android:elevation="10dp"
+        android:id="@+id/l"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+
+        android:orientation="horizontal">
+
+        <ImageView
+            android:onClick="close"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="0dp"
+
+            android:id="@+id/back"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+
+            android:src="@drawable/baseline_arrow_back_24"
+            android:scaleType="center"/>
+
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/textview1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="0dp"
+            android:padding="3dp"
+            android:text="My Address"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:orientation="vertical"
+        android:padding="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/profile_layout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:padding="8dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Full name"
+                    android:textColor="#000000"
+                    />
+
+
+                <EditText
+                    android:singleLine="true"
+                    android:layout_margin="4dp"
+                    android:id="@+id/name_"
+
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+
+                    android:textColor="#000000"
+                    android:hint="Full name * "
+                    android:textColorHint="#607D8B"/>
+                <TextView
+                    android:padding="8dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Mobile Number"
+                    android:textColor="#000000"
+                    />
+
+                <EditText
+
+                    android:inputType="phone"
+
+                    android:singleLine="true"
+                    android:layout_margin="4dp"
+                    android:id="@+id/mobile_"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:maxLength="10"
+                    android:textColor="#000000"
+                    android:hint="Mobile Number *"
+                    android:textColorHint="#607D8B"/>
+
+                <TextView
+                    android:padding="8dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Email "
+                    android:textColor="#000000"
+                    />
+
+                <EditText
+                    android:singleLine="true"
+                    android:layout_margin="4dp"
+                    android:id="@+id/email_"
+
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textColor="#000000"
+                    android:hint="Email id"
+                    android:textColorHint="#607D8B"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/address_layout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:padding="8dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Address"
+                    android:textColor="#000000"
+                    />
+
+                <EditText
+
+                    android:maxLines="5"
+                    android:layout_margin="4dp"
+                    android:id="@+id/addr_"
+
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:padding="8dp"
+                    android:gravity="top"
+                    android:textColor="#000000"
+                    android:hint="Block no, Apartment, House No. *"
+                    android:textColorHint="#607D8B"/>
+
+
+
+                <TextView
+
+
+                    android:layout_margin="4dp"
+                    android:paddingTop="12dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="PIN code"
+                    android:textColor="#000000"
+                    />
+
+                <EditText
+                    android:inputType="phone"
+                    android:singleLine="true"
+                    android:layout_margin="4dp"
+                    android:id="@+id/pin_code_"
+                    android:paddingTop="12dp"
+                    android:maxLength="6"
+
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+
+                    android:textColor="#000000"
+                    android:hint="PIN Code *"
+                    android:textColorHint="#607D8B"/>
+
+                <TextView
+
+                    android:visibility="gone"
+                    android:layout_margin="4dp"
+                    android:paddingTop="12dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="Address type"
+                    android:textColor="#000000"
+                    />
+
+
+                <RadioGroup
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radioGroup">
+
+                    <RadioButton
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/radio_home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  Home"
+                        android:layout_marginTop="10dp"
+                        android:checked="false"
+                        android:textSize="17dp" />
+
+
+                    <RadioButton
+                        android:layout_marginLeft="10dp"
+
+                        android:id="@+id/radio_office"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  Office"
+                        android:layout_marginTop="10dp"
+                        android:checked="false"
+                        android:textSize="17dp" />
+
+
+                </RadioGroup>
+
+                <ProgressBar
+                    android:visibility="gone"
+
+                    android:id="@+id/prog"
+                    android:layout_marginTop="10dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+
+
+                <Button
+                    android:visibility="gone"
+                    android:layout_marginLeft="30dp"
+
+                    android:backgroundTint="#3154DA"
+                    android:id="@+id/location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="17dp"
+                    android:background="#008DCD"
+                    android:layout_gravity="center_horizontal|center_vertical"
+
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="AUTO LOCATION "
+                    android:textSize="12sp"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+
+
+
+
+            <Button
+
+                android:id="@+id/save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginTop="30dp"
+
+                android:layout_marginBottom="20dp"
+                android:background="#008DCD"
+                android:gravity="center_horizontal|center_vertical"
+
+                android:onClick="go_check"
+                android:padding="8dp"
+
+                android:text="Confirm Address"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:cornerRadius="100dp" />
+
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+

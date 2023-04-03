@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:elevation="10dp"
+            android:id="@+id/l"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+
+            android:orientation="horizontal">
+
+            <ImageView
+                android:onClick="close"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+
+                android:id="@+id/back"
+                android:layout_width="25dp"
+                android:layout_height="20dp"
+
+                android:src="@drawable/baseline_arrow_back_24"
+                android:scaleType="center"/>
+
+
+            <TextView
+                android:layout_weight="1"
+                android:id="@+id/textview1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:padding="3dp"
+                android:text="Book a service"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_margin="10dp"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Select Categories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Spinner
+
+                android:id="@+id/spinner_categories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="0dp"
+                android:spinnerMode="dropdown"/>
+
+            <TextView
+                android:layout_margin="10dp"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Select Service name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Spinner
+
+
+                android:id="@+id/spinner_services"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="0dp"
+                android:spinnerMode="dropdown"/>
+
+
+
+            <TextView
+                android:layout_margin="10dp"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Default Description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Spinner
+
+
+                android:id="@+id/spinner_services_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="0dp"
+                android:spinnerMode="dropdown"/>
+
+
+
+            <!--     <TextView
+                     android:layout_margin="10dp"
+                     android:textColor="#000"
+                     android:textSize="20sp"
+                     android:textStyle="bold"
+                     android:text="Default description"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"/>
+
+                 <Spinner
+
+
+                     android:id="@+id/spinner_description"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:padding="0dp"
+                     android:spinnerMode="dropdown"/>-->
+
+
+            <LinearLayout
+                android:visibility="gone"
+                android:orientation="vertical"
+             android:id="@+id/description_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/desc"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:hint="Other service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+            <TextView
+                android:layout_margin="10dp"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="Want to booking this for any other person?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioGroup
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioGroup">
+
+                <RadioButton
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/radio_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  YES"
+                    android:layout_marginTop="10dp"
+                    android:checked="false"
+                    android:textSize="17dp" />
+
+
+                <RadioButton
+                    android:layout_marginLeft="10dp"
+
+                    android:id="@+id/radio_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  NO"
+
+                    android:layout_marginTop="10dp"
+                    android:checked="false"
+                    android:textSize="17dp" />
+
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:visibility="visible"
+                android:id="@+id/other_person_layout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_margin="10dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+
+                    android:text="Contact person name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/person_name"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:hint="Enter contact person name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="Contact person number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/person_number"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:maxLength="10"
+                    android:inputType="phone"
+                    android:hint="Contact person number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="Contact person email ( You receive all updates on this email)"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/person_email"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:hint="Contact person email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+
+                    android:layout_margin="10dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="Contact person address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/person_address"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:hint="Contact person address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="Address pincode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/person_pincode"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:maxLength="6"
+                    android:inputType="phone"
+                    android:hint="Enter address pincode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                   android:layout_margin="10dp"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Select Payment mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <Spinner
+
+
+                android:id="@+id/spinner_payment_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="0dp"
+                android:spinnerMode="dropdown"/>
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/book_now"
+                android:onClick="book"
+                android:padding="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:backgroundTint="#000"
+                android:text="BOOK NOW"
+                app:cornerRadius="50sp">
+
+
+            </com.google.android.material.button.MaterialButton>
+
+
+
+
+
+
+
+            <ListView
+                android:id="@+id/listview_categories"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="8dp"
+                android:choiceMode="none"/>
+
+            <ListView
+                android:id="@+id/listview_sevices"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="8dp"
+                android:choiceMode="none"/>
+
+
+            <ListView
+                android:id="@+id/listview_service_type"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="8dp"
+                android:choiceMode="none"/>
+
+            <ListView
+                android:id="@+id/listview_payment_mode"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="8dp"
+                android:choiceMode="none"/>
+
+
+            <ListView
+                android:id="@+id/listview_default_desciption"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="8dp"
+                android:choiceMode="none"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+
+
+
+
+</LinearLayout>

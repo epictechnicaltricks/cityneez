@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_bg"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="8dp"
+        android:elevation="20dp"
+        android:padding="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:padding="13dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textSize="18sp"
+                    android:textColor="#000"
+android:id="@+id/service_name"
+                    android:textStyle="bold"
+                    android:text="AC CLEANING"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="13sp"
+                    android:textColor="#FF9800"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="Progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+            </LinearLayout>
+
+
+
+
+
+            <TextView
+                android:id="@+id/date"
+                android:textColor="#787777"
+                android:textSize="16sp"
+android:alpha="0.6"
+                android:text="Booked on 19th March 2022"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+
+                android:gravity="end"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.button.MaterialButton
+                   android:visibility="gone"
+                    android:id="@+id/support"
+                    android:layout_width="wrap_content"
+                    app:cornerRadius="50dp"
+                    android:text="SUPPORT"
+                    android:textSize="9sp"
+                    android:layout_margin="5dp"
+                    android:layout_height="wrap_content"/>
+
+
+                <com.google.android.material.button.MaterialButton
+                  android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    app:backgroundTint="#F14949"
+                    app:cornerRadius="50dp"
+                    android:layout_margin="5dp"
+                    android:text="CANCEL BOOKING"
+                    android:textSize="9sp"
+
+                    android:layout_height="wrap_content"/>
+
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/note"
+                android:textColor="#E4E1E1"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:text="Note : Cancel booking available within 1hr of booking "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

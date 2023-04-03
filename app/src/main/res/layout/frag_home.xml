@@ -1,0 +1,139 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+
+	android:orientation="vertical">
+
+
+<ScrollView
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+
+
+
+
+		<LinearLayout
+			android:paddingTop="15dp"
+			android:paddingStart="8dp"
+			android:paddingEnd="8dp"
+			android:background="#FFFFFF"
+			android:id="@+id/linear2"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+			<LinearLayout
+				android:id="@+id/linear4"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+
+				android:padding="0dp"
+				android:gravity="center_horizontal|center_vertical"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear5"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="5dp"
+					android:gravity="left|center_vertical"
+					android:orientation="vertical"
+					android:layout_weight="1">
+
+					<TextView
+						android:id="@+id/welcome"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:paddingLeft="8dp"
+						android:paddingTop="8dp"
+						android:paddingRight="8dp"
+						android:text="Welcome"
+						android:textStyle="bold"
+						android:textSize="20sp"
+						android:textColor="#000000"/>
+					<TextView
+						android:ellipsize="end"
+						android:singleLine="true"
+						android:id="@+id/user_name"
+						android:layout_width="160dp"
+						android:layout_height="wrap_content"
+						android:paddingLeft="8dp"
+						android:paddingTop="2dp"
+						android:paddingRight="8dp"
+						android:paddingBottom="8dp"
+						android:text="Cityneez User"
+						android:textSize="15sp"
+
+						android:textColor="#4C4C4C"/>
+				</LinearLayout>
+
+
+<LinearLayout
+	android:layout_marginEnd="20dp"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content">
+
+	<ImageView
+		android:scaleType="centerInside"
+		android:src="@drawable/logo"
+		android:layout_width="55dp"
+		android:layout_height="53dp"/>
+
+</LinearLayout>
+
+
+			</LinearLayout>
+
+
+			<androidx.viewpager.widget.ViewPager
+
+				android:padding="0dp"
+				android:background="#FFFFFF"
+				android:id="@+id/viewpager1"
+				android:layout_width="match_parent"
+				android:layout_height="200dp" />
+
+		</LinearLayout>
+
+
+
+
+
+
+
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/book_service"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginTop="50dp"
+			android:backgroundTint="#000"
+			android:text="BOOK A SERVICE"
+			app:cornerRadius="50sp">
+
+
+		</com.google.android.material.button.MaterialButton>
+
+
+	</LinearLayout>
+
+</ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
+
