@@ -30,6 +30,7 @@ import com.serviceapp.RadialProgressView;
 import com.serviceapp.RequestNetwork;
 import com.serviceapp.RequestNetworkController;
 import com.serviceapp.Util;
+import com.serviceapp.activity.Login;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -48,8 +49,9 @@ public class Booking_Fragment extends  Fragment  {
 	private RequestNetwork booked_list_api;
 	private RequestNetwork.RequestListener _booked_list_listener;
 
-	LinearLayout msg ;
+	LinearLayout msg, login_bg ;
 
+	TextView login, login2;
 
 
 
@@ -66,9 +68,35 @@ public class Booking_Fragment extends  Fragment  {
 	
 	private void initialize(Bundle _savedInstanceState, View _view) {
 
+		login = _view.findViewById(R.id.login_);
+		login2 = _view.findViewById(R.id.login_2);
+login_bg = _view.findViewById(R.id.login_bg);
 
 
-msg = _view.findViewById(R.id.msg);
+login.setOnClickListener(new View.OnClickListener() {
+	@Override
+	public void onClick(View view) {
+		startActivity(new Intent(getActivity(), Login.class));
+	}
+});
+		SharedPreferences sh = getContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+		if(!sh.getString("token", "").equals("")) {
+
+
+			login_bg.setVisibility(View.GONE);
+
+
+
+
+		} else
+		{
+			login_bg.setVisibility(View.VISIBLE);
+
+		}
+
+
+
+		msg = _view.findViewById(R.id.msg);
 
 		recyclerview1 = _view.findViewById(R.id.recyclerview1);
 		//t1.setTypeface(Typeface.createFromAsset(getContext().getAssets(),"fonts/google_sans_medium.ttf"), Typeface.BOLD);
@@ -141,7 +169,8 @@ Util.showMessage(getActivity(), message);
 
 		if(!sharedPreferences.getString("user_id", "").equals(""))
 		{
-			request_user_book_list_api(sharedPreferences.getString("user_id", ""));
+		//	request_user_book_list_api(sharedPreferences.getString("user_id", ""));
+			request_user_book_list_api(sharedPreferences.getString("customer_emailid", "")+"");
 		}
 
 
@@ -247,7 +276,11 @@ Util.showMessage(getActivity(), message);
 			final TextView status = _view.findViewById(R.id.status);
 			final TextView date = _view.findViewById(R.id.date);
 			final TextView note = _view.findViewById(R.id.note);
+			final TextView book_id = _view.findViewById(R.id.book_id);
+			final TextView desc = _view.findViewById(R.id.desc);
 			final MaterialButton support = _view.findViewById(R.id.support);
+			final MaterialButton cancel = _view.findViewById(R.id.cancel);
+
 
 
 			try{
@@ -258,7 +291,12 @@ Util.showMessage(getActivity(), message);
 
 
 				date.setText("Booked on " + listmap2.get(_position).get("bookservice_date"));
-				service_name.setText(Objects.requireNonNull(listmap2.get(_position).get("bookservice_name")).toString());
+				service_name.setText(Objects.requireNonNull(listmap2.get(_position).get("bookservice_categoryname")).toString());
+
+				book_id.setText("BOOKED ID: "+ listmap2.get(_position).get("id"));
+
+
+				desc.setText("Service name: "+ listmap2.get(_position).get("bookservice_name")+", Description: "+listmap2.get(_position).get("bookservice_defaultdescription"));
 
 			/*	switch (Objects.requireNonNull(listmap2.get(_position).get("status")).toString())
 				{
@@ -276,12 +314,13 @@ Util.showMessage(getActivity(), message);
 					case "confirm": status.setText("Confirmed");
 					card.setCardBackgroundColor(0xFF226df0);
 					support.setVisibility(View.VISIBLE);
+					cancel.setVisibility(View.GONE);
 						note.setVisibility(View.GONE);
 						break;
 					case "done": status.setText("Completed");
-					card.setCardBackgroundColor(0xFF23ad0a);
-					support.setVisibility(View.GONE);
-						note.setVisibility(View.VISIBLE);
+					   card.setCardBackgroundColor(0xFF23ad0a);
+					   support.setVisibility(View.GONE);
+						cancel.setVisibility(View.GONE);
 						note.setVisibility(View.GONE);
 						break;
 
@@ -289,19 +328,21 @@ Util.showMessage(getActivity(), message);
 					case "cancel": status.setText("Cancelled");
 						card.setCardBackgroundColor(0xFFd1431b);
 						support.setVisibility(View.GONE);
-						note.setVisibility(View.VISIBLE);
+						cancel.setVisibility(View.GONE);
 						note.setVisibility(View.GONE);
 						break;
 
 					default: status.setText("Progress");
 					card.setCardBackgroundColor(0xFFe39929);
-					support.setVisibility(View.VISIBLE);
+					support.setVisibility(View.GONE);
 					note.setVisibility(View.VISIBLE);
+					cancel.setVisibility(View.VISIBLE);
+
 						break;
 				}
 
 
-support.setVisibility(View.GONE);
+//support.setVisibility(View.GONE);
 
 				support.setOnClickListener(new View.OnClickListener() {
 					@Override

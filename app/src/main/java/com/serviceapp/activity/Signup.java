@@ -298,7 +298,7 @@ if(Objects.requireNonNull(name.getText()).toString().trim().equals("") ||
         pass.getText().toString().trim().equals("") ||
         Objects.requireNonNull(email.getText()).toString().trim().equals("") || !Patterns.EMAIL_ADDRESS.matcher(email.getText().toString().trim()).matches())
 {
-    Toast.makeText(this, "Invalid input data on signup form", Toast.LENGTH_SHORT).show();
+    Toast.makeText(this, "Invalid input on signup form", Toast.LENGTH_LONG).show();
 } else {
 
     if(isVerified)

@@ -155,8 +155,9 @@ try {
 
     private void login_logic() {
 
-        if(Objects.requireNonNull(pass.getText()).toString().trim().equals("") || !Patterns.EMAIL_ADDRESS.matcher(email.getText().toString().trim()).matches() || Objects.requireNonNull(email.getText()).toString().trim().equals("")) {
-            Util.showMessage(getApplicationContext(), "Invalid input data on login form");
+        if(Objects.requireNonNull(pass.getText()).toString().trim().equals("") || !Patterns.EMAIL_ADDRESS.matcher(Objects.requireNonNull(email.getText()).toString().trim()).matches() || Objects.requireNonNull(email.getText()).toString().trim().equals("")) {
+            Util.showMessage(getApplicationContext(), "Invalid input on login form");
+
         } else {
             login_api_request(email.getText().toString().trim(), pass.getText().toString().trim());}
     }

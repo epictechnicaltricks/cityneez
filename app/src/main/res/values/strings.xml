@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Service App</string>
-    <string name="api_path">https://cityneedzapi.000webhostapp.com/php-auth-api-live/</string>
+  <!--  <string name="api_path">https://cityneedzapi.000webhostapp.com/php-auth-api-live/</string>-->
+    <string name="api_path">http://gvit.in/cityneedsapp/</string>
 </resources>

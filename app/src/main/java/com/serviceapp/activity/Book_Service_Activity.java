@@ -1,11 +1,15 @@
 package com.serviceapp.activity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
@@ -35,8 +39,11 @@ import com.serviceapp.Util;
 
 import java.security.cert.Extension;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Objects;
+
+
 
 public class Book_Service_Activity extends AppCompatActivity {
     TextView login;
@@ -119,6 +126,30 @@ public class Book_Service_Activity extends AppCompatActivity {
                 }else {
                     other_person_layout.setVisibility(View.GONE);
                 }
+            }
+        });
+        desc.setError("Please explain your service type..");
+        desc.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(!charSequence.toString().equals(""))
+                {
+                    default_description = "Other";
+                } else {
+
+                    desc.setError("Please explain your service type..");
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
 
@@ -340,12 +371,36 @@ public class Book_Service_Activity extends AppCompatActivity {
                     map = new Gson().fromJson(response, new TypeToken<HashMap<String, Object>>(){}.getType());
                     String values = (new Gson()).toJson(map.get("user"), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
                     service_type_list = new Gson().fromJson(values, new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
+
+                    String desc_value = service_type_list.get(0).get("category_defaultdesc")+"";
+
+                    String[] arrOfStr = desc_value.split(",");
+
+                    service_type_list.clear();
+                    for (String a : arrOfStr){
+
+                        {
+                            HashMap<String, Object> _item = new HashMap<>();
+                            _item.put("category_defaultdesc", a);
+                            service_type_list.add(_item);
+                        }
+
+                }
+
+                    {
+                        HashMap<String, Object> _item = new HashMap<>();
+                        _item.put("category_defaultdesc", "Other");
+                        service_type_list.add(_item);
+                    }
+
                     listview4.setAdapter(new Listview4Adapter(service_type_list));
                     ((BaseAdapter)listview4.getAdapter()).notifyDataSetChanged();
                     spinner_service_type.setAdapter(new Listview4Adapter(service_type_list));
 
                 } else {
+
                     Util.showMessage(getApplicationContext(), "Description not available");
+
                 }
             }
 
@@ -361,15 +416,54 @@ public class Book_Service_Activity extends AppCompatActivity {
             public void onResponse(String tag, String response, HashMap<String, Object> responseHeaders) {
                 _telegramLoaderDialog(false);
                 Log.d("_api_response_booked",response);
-                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-                finish();
-                Util.showMessage(getApplicationContext(), "Booked Successful");
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(Book_Service_Activity.this);
+
+                builder.setMessage("You have successfully booked we will contact you soon.");
+
+
+                builder.setTitle("Booked Successful");
+
+                // Set Cancelable false for when the user clicks on the outside the Dialog Box then it will remain show
+                builder.setCancelable(false);
+
+                // Set the positive button with yes name Lambda OnClickListener method is use of DialogInterface interface.
+                builder.setPositiveButton("OK", (DialogInterface.OnClickListener) (dialog, which) -> {
+
+                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                    finish();
+                    Toast.makeText(Book_Service_Activity.this, "SUCCESSFULLY BOOKED", Toast.LENGTH_LONG).show();
+                });
+
+                builder.create().show();
+
+
+
             }
 
             @Override
             public void onErrorResponse(String tag, String message) {
                 Util.showMessage(getApplicationContext(), message);
                 _telegramLoaderDialog(false);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(Book_Service_Activity.this);
+
+                builder.setMessage("Please check your internet connection, Try again!");
+
+
+                builder.setTitle("Failed to book your order");
+
+                // Set Cancelable false for when the user clicks on the outside the Dialog Box then it will remain show
+                builder.setCancelable(false);
+
+                // Set the positive button with yes name Lambda OnClickListener method is use of DialogInterface interface.
+                builder.setPositiveButton("OK", (DialogInterface.OnClickListener) (dialog, which) -> {
+
+
+                });
+
+               builder.create().show();
+
             }
         };
 
@@ -418,23 +512,26 @@ public class Book_Service_Activity extends AppCompatActivity {
 
     private void book_service() {
 
-        _telegramLoaderDialog(true);
+
 
         SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
 
 
-        if(yes.isChecked() )
+        if(yes.isChecked())
         {
 
             if(!person_address.getText().toString().trim().equals("")
-            || !person_name.getText().toString().trim().equals("")
-                    || !person_number.getText().toString().trim().equals("")
-                    || !person_email.getText().toString().trim().equals("") || !Patterns.EMAIL_ADDRESS.matcher(person_email.getText().toString().trim()).matches()
-                    ||!person_pincode.getText().toString().trim().equals(""))
+            && !person_name.getText().toString().trim().equals("")
+                    &&  person_number.getText().toString().length()==10
+                    &&  person_email.getText().toString().trim().contains("@")
+                    && !person_pincode.getText().toString().trim().equals("") && person_pincode.getText().toString().length()==6)
             {
+
+                _telegramLoaderDialog(true);
+                //Toast.makeText(this, "bbbb", Toast.LENGTH_SHORT).show();
                 book_now_api.startRequestNetwork(RequestNetworkController.GET,
                         getResources().getString(R.string.api_path)+"bookService.php?" +
-                                "booked_user_id="+ 0 +
+                                "booked_user_id="+ person_email.getText().toString().trim() +
                                 "&booked_user_type=" + "guest" +
                                 "&bookservice_categoryid=" + category_id +
                                 "&bookservice_categoryname=" + category_name +
@@ -450,13 +547,19 @@ public class Book_Service_Activity extends AppCompatActivity {
                         "no tag", _book_now__api_listener);
             }
 
-            else {Util.showMessage(getApplicationContext(), "Please fill all contact person details!");}
+            else {Util.showMessage(getApplicationContext(), "Invalid contact person details!");
+
+            person_email.setError("Invalid email");
+            person_number.setError("Invalid number");
+            person_pincode.setError("invalid pincode");
+
+            }
 
         }else
         {
             book_now_api.startRequestNetwork(RequestNetworkController.GET,
                     getResources().getString(R.string.api_path)+"bookService.php?" +
-                            "booked_user_id="+ sharedPreferences.getString("user_id", "") +
+                            "booked_user_id="+ sharedPreferences.getString("customer_emailid", "") +
                             "&booked_user_type=" + "login" +
                             "&bookservice_categoryid=" + category_id +
                             "&bookservice_categoryname=" + category_name +
@@ -884,8 +987,8 @@ public class Book_Service_Activity extends AppCompatActivity {
     }
 
     public void close(View view) {
-        Toast.makeText(this, "Booked Successful", Toast.LENGTH_LONG).show();
-        //finish();
+        //Toast.makeText(this, "Booked Successful", Toast.LENGTH_LONG).show();
+        finish();
         //startActivity(new Intent(getApplicationContext(), Book_Service_Activity.class));
     }
 
