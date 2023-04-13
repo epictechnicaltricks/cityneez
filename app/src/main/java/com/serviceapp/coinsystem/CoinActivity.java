@@ -218,7 +218,7 @@ Util.showMessage(getApplicationContext(), message);
                       // request_user_book_list_api(sharedPreferences.getString("customer_emailid", "")+"");
 
                 } else {
-
+//
                     Toast.makeText(CoinActivity.this, "enter valid value", Toast.LENGTH_SHORT).show();
                 }
             }
