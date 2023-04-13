@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".coinsystem.CoinActivity"
+    android:orientation="vertical">
+
+<TextView
+    android:id="@+id/coin"
+    android:text="Loading.."
+    android:textStyle="bold"
+    android:textSize="25sp"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+</TextView>
+
+    <EditText
+        android:id="@+id/add_qty"
+        android:hint="enter coin qty to add"
+android:inputType="number"
+        android:digits="0123456789"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </EditText>
+
+    <TextView
+
+        android:id="@+id/add_coin"
+        android:padding="10dp"
+android:textColor="#fff"
+        android:text="ADD COIN"
+        android:background="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+    </TextView>
+<EditText
+    android:digits="0123456789"
+    android:id="@+id/use_qty"
+
+    android:hint="enter coin qty to use"
+    android:inputType="number"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+</EditText>
+    <TextView
+
+        android:id="@+id/use_coin"
+        android:padding="10dp"
+        android:textColor="#fff"
+        android:text="USE COIN "
+        android:background="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+    </TextView>
+
+
+
+</LinearLayout>

@@ -10,6 +10,7 @@ import android.os.Handler;
 
 import com.serviceapp.activity.HomeActivity;
 import com.serviceapp.activity.Login;
+import com.serviceapp.coinsystem.CoinActivity;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -43,7 +44,8 @@ You find the api link on values/string.xml folder
                 SharedPreferences sh = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
                 if(!sh.getString("token", "").equals("")) {
 
-                    i.setClass(getApplicationContext(), HomeActivity.class);
+                    //i.setClass(getApplicationContext(), HomeActivity.class);
+                    i.setClass(getApplicationContext(), CoinActivity.class);
 
 
                 } else
