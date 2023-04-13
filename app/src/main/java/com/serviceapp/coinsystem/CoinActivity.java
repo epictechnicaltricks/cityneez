@@ -208,7 +208,7 @@ Util.showMessage(getApplicationContext(), message);
 
                 if(!use_qty.getText().toString().trim().equals("")&&!use_qty.getText().toString().trim().equals("0"))
                 {
-                    if(Double.parseDouble(use_qty.getText().toString())<coin_value)
+                    if(Double.parseDouble(use_qty.getText().toString())<=coin_value)
                     {
                         request_update_coin("use",user_id,""+(coin_value-Double.parseDouble(use_qty.getText().toString())));
 
@@ -278,7 +278,7 @@ Util.showMessage(getApplicationContext(), message);
     private void request_added_coin_info(String _user_id, String _coin_added, String _description)
     {
 
-        String api_params = "user_id="+_user_id.trim()+"&coins_added="+_coin_added.trim()+"&description="+_description.trim();
+        String api_params = "?user_id="+_user_id.trim()+"&coins_added="+_coin_added.trim()+"&description="+_description.trim();
         coin_added_info_api.startRequestNetwork(RequestNetworkController.POST,
                 getResources().getString(R.string.api_path)+"Coin_added_info.php"+api_params,
                 "no tag", _coin_add_info_api_listener);
@@ -289,7 +289,7 @@ Util.showMessage(getApplicationContext(), message);
     private void request_used_coin_info(String _user_id, String _coin_used, String _description)
     {
 
-        String api_params = "user_id="+_user_id.trim()+"&coins_used="+_coin_used.trim()+"&description="+_description.trim();
+        String api_params = "?user_id="+_user_id.trim()+"&coins_used="+_coin_used.trim()+"&description="+_description.trim();
         coin_used_info_api.startRequestNetwork(RequestNetworkController.POST,
                 getResources().getString(R.string.api_path)+"Coin_used_info.php"+api_params,
                 "no tag", _coin_used_info_api_listener);
