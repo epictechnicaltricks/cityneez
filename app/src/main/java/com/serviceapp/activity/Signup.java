@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
@@ -155,56 +156,52 @@ boolean isVerified= false;
             }
         };
 
-        _fauth_reset_password_listener = new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(Task<Void> _param1) {
-                final boolean _success = _param1.isSuccessful();
+        _fauth_reset_password_listener = _param1 -> {
+            final boolean _success = _param1.isSuccessful();
 
-            }
         };
 
 
-        _fauth_sign_in_listener = new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(Task<AuthResult> _param1) {
-                final boolean _success = _param1.isSuccessful();
-                final String _errorMessage = _param1.getException() != null ? _param1.getException().getMessage() : "";
-               // progressbar2.setVisibility(View.GONE);
-                if (_success) {
-                    Util.showMessage(getApplicationContext(), "Verifications Success ");
-
-                    _telegramLoaderDialog(false);
-                    try{
-                        generateOTPBtn.setText("Verified ✔");
-                        generateOTPBtn.setEnabled(false);
-                        phone.setEnabled(false);
-                        phone.setAlpha(0.8f);
-                        otp.setVisibility(View.GONE);
-                        isVerified = true;
-
-                      /*  _register_api_request(
-                                "Student",
-                                getIntent().getStringExtra("email").substring(0,10),
-                                getIntent().getStringExtra("email"),
-                                getIntent().getStringExtra("pass"),
-                                getIntent().getStringExtra("phone"),
-                                "Class 5",
-                                "COMPUTER SCIENCE",
-                                "2011",
-                                "22");
+        _fauth_sign_in_listener = _param1 -> {
+            final boolean _success = _param1.isSuccessful();
+            final String _errorMessage = _param1.getException() != null ? _param1.getException().getMessage() : "";
+           // progressbar2.setVisibility(View.GONE);
+            _telegramLoaderDialog(false);
+            if (_success) {
+                Util.showMessage(getApplicationContext(), "Verifications Success ");
 
 
+                try{
+                    generateOTPBtn.setText("Verified ✔");
+                    generateOTPBtn.setEnabled(false);
+                    phone.setEnabled(false);
+                    phone.setAlpha(0.8f);
+                    otp.setVisibility(View.GONE);
+                    isVerified = true;
 
-                        showMessage("Creating account..");*/
+                  /*  _register_api_request(
+                            "Student",
+                            getIntent().getStringExtra("email").substring(0,10),
+                            getIntent().getStringExtra("email"),
+                            getIntent().getStringExtra("pass"),
+                            getIntent().getStringExtra("phone"),
+                            "Class 5",
+                            "COMPUTER SCIENCE",
+                            "2011",
+                            "22");
 
-                    }catch(Exception e){
-                       // showMessage(e.toString());
-                    }
 
+
+                    showMessage("Creating account..");*/
+
+                }catch(Exception e){
+                   // showMessage(e.toString());
                 }
-                else {
-                    Util.showMessage(getApplicationContext(), "Invalid OTP - "+ _errorMessage);
-                }
+
+            }
+            else {
+
+                Util.showMessage(getApplicationContext(), "Invalid OTP - "+ _errorMessage);
             }
         };
 
@@ -293,7 +290,7 @@ boolean isVerified= false;
     private void signup_logic() {
 
 if(Objects.requireNonNull(name.getText()).toString().trim().equals("") ||
-        Objects.requireNonNull(phone.getText()).toString().trim().equals("") ||
+        Objects.requireNonNull(phone.getText()).toString().trim().equals("") || Objects.requireNonNull(phone.getText()).toString().trim().length()!=10 ||
         !Objects.requireNonNull(pass.getText()).toString().trim().equals(Objects.requireNonNull(c_pass.getText()).toString().trim()) ||
         pass.getText().toString().trim().equals("") ||
         Objects.requireNonNull(email.getText()).toString().trim().equals("") || !Patterns.EMAIL_ADDRESS.matcher(email.getText().toString().trim()).matches())
@@ -309,8 +306,8 @@ if(Objects.requireNonNull(name.getText()).toString().trim().equals("") ||
                 email.getText().toString().trim(),
                 c_pass.getText().toString().trim());
     } else {
-
-        Util.showMessage(getApplicationContext(), "Phone no not verified");
+        generateOTPBtn.performClick();
+        Util.showMessage(getApplicationContext(), "Verifying Phone no");
     }
 
 }
@@ -353,6 +350,7 @@ if(Objects.requireNonNull(name.getText()).toString().trim().equals("") ||
 
         //verify_otp_layout.setVisibility(View.VISIBLE);
         //code for send otp on user mobile
+
 
         com.google.firebase.auth.PhoneAuthProvider.getInstance().verifyPhoneNumber(_phone_No, 50, java.util.concurrent.TimeUnit.SECONDS, this, mCallbacks);
     }

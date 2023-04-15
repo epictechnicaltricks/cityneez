@@ -133,6 +133,7 @@
                     />
 
                 <EditText
+                    android:enabled="false"
                     android:singleLine="true"
                     android:layout_margin="4dp"
                     android:id="@+id/email_"

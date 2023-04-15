@@ -262,11 +262,11 @@ public class Addressactivity extends AppCompatActivity {
 
 
     public void go_check(View view) {
-        if(!name.getText().toString().trim().equals("") ||
-                !addr.getText().toString().trim().equals("") ||
-                !mobile.getText().toString().trim().equals("")
-                || !pincode.getText().toString().trim().equals("")
-                || !email.getText().toString().trim().equals("")) {
+        if(!name.getText().toString().trim().equals("") &&
+                !addr.getText().toString().trim().equals("") &&
+                !mobile.getText().toString().trim().equals("") && mobile.getText().toString().length()==10
+                && !pincode.getText().toString().trim().equals("") && pincode.getText().toString().length()==6
+                && !email.getText().toString().trim().equals("") && email.getText().toString().contains("@")) {
 
             update_profile(
                     name.getText().toString().trim(),
@@ -277,7 +277,7 @@ public class Addressactivity extends AppCompatActivity {
 
         }else {
 
-            Util.showMessage(getApplicationContext(), "Please fill all the fields.");
+            Util.showMessage(getApplicationContext(), "Fields are invalid.");
         }
     }
 

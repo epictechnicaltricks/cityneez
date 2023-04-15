@@ -535,7 +535,7 @@ public class Book_Service_Activity extends AppCompatActivity {
                                 "&booked_user_type=" + "guest" +
                                 "&bookservice_categoryid=" + category_id +
                                 "&bookservice_categoryname=" + category_name +
-                                "&bookservice_name=car wasing" + service_name +
+                                "&bookservice_name=" + service_name +
                                 "&bookservice_defaultdescription=" + default_description +
                                 "&bookservice_description=" + desc.getText().toString().trim() +
                                 "&bookservice_location=" +   person_address.getText().toString().trim() +
@@ -557,6 +557,7 @@ public class Book_Service_Activity extends AppCompatActivity {
 
         }else
         {
+            _telegramLoaderDialog(true);
             book_now_api.startRequestNetwork(RequestNetworkController.GET,
                     getResources().getString(R.string.api_path)+"bookService.php?" +
                             "booked_user_id="+ sharedPreferences.getString("customer_emailid", "") +

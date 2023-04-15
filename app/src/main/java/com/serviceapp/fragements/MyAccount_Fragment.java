@@ -137,7 +137,7 @@ logout.setOnClickListener(new View.OnClickListener() {
 		editor.apply();
 
 		startActivity(new Intent(getContext(), SplashScreen.class));
-		getActivity().finish();
+		getActivity().finishAffinity();
 	}
 });
 

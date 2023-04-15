@@ -1,7 +1,10 @@
 package com.serviceapp.fragements;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -14,6 +17,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -54,6 +58,10 @@ public class Booking_Fragment extends  Fragment  {
 	TextView login, login2;
 
 
+	private RequestNetwork cancel_booking_api;
+	private RequestNetwork.RequestListener _cancel_booking_listener;
+
+
 
 
 
@@ -67,6 +75,7 @@ public class Booking_Fragment extends  Fragment  {
 	}
 	
 	private void initialize(Bundle _savedInstanceState, View _view) {
+
 
 		login = _view.findViewById(R.id.login_);
 		login2 = _view.findViewById(R.id.login_2);
@@ -115,6 +124,26 @@ login.setOnClickListener(new View.OnClickListener() {
 
 		booked_list_api = new RequestNetwork(getActivity());
 
+		cancel_booking_api = new RequestNetwork(getActivity());
+
+		_cancel_booking_listener = new RequestNetwork.RequestListener() {
+			@Override
+			public void onResponse(String tag, String response, HashMap<String, Object> responseHeaders) {
+				SharedPreferences sharedPreferences = getContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+
+				if(response.contains("200"))
+				{
+				Util.showMessage(getActivity(), "Booking Cancelled");
+				request_user_book_list_api(sharedPreferences.getString("customer_emailid", "")+"");
+				}
+			}
+
+			@Override
+			public void onErrorResponse(String tag, String message) {
+              Util.showMessage(getActivity(), message);
+			}
+		};
+
 		_booked_list_listener = new RequestNetwork.RequestListener() {
 			@Override
 			public void onResponse(String tag, String response, HashMap<String, Object> responseHeaders) {
@@ -133,13 +162,18 @@ login.setOnClickListener(new View.OnClickListener() {
 						recyclerview1.setAdapter(new Recyclerview1Adapter(listmap2));
 						recyclerview1.setLayoutManager(new LinearLayoutManager(getContext()));
 						recyclerview1.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+
 						recyclerview1.setVisibility(View.VISIBLE);
 						msg.setVisibility(View.GONE);
 					} else {
+
+						listmap2.clear();
 						recyclerview1.setVisibility(View.GONE);
 						msg.setVisibility(View.VISIBLE);
 						//Util.showMessage(getActivity(), "No bookings found.");
 					}
+
+
 				}catch (Exception e)
 				{
 					Util.showMessage(getActivity(), e.toString());
@@ -252,6 +286,19 @@ Util.showMessage(getActivity(), message);
 	}
 
 
+	private void request_cancel_booking_api(String _bookservice_id)
+	{
+		//_telegramLoaderDialog(true);
+
+		String api_params = "?bookservice_id=" + _bookservice_id;
+
+		cancel_booking_api.startRequestNetwork(RequestNetworkController.POST,
+				getResources().getString(R.string.api_path)+"CancelBooking.php"+api_params,
+				"no tag",_cancel_booking_listener );
+		Log.d("CancelBooking_api",getResources().getString(R.string.api_path)+"CancelBooking.php"+api_params);
+	}
+
+
 	public class Recyclerview1Adapter extends RecyclerView.Adapter<Recyclerview1Adapter.ViewHolder> {
 		ArrayList<HashMap<String, Object>> _data;
 		public Recyclerview1Adapter(ArrayList<HashMap<String, Object>> _arr) {
@@ -290,10 +337,12 @@ Util.showMessage(getActivity(), message);
 				date.setTextColor(0xFFFFFFFF);
 
 
+
+
 				date.setText("Booked on " + listmap2.get(_position).get("bookservice_date"));
 				service_name.setText(Objects.requireNonNull(listmap2.get(_position).get("bookservice_categoryname")).toString());
 
-				book_id.setText("BOOKED ID: "+ listmap2.get(_position).get("id"));
+				book_id.setText("BOOKED ID: "+ listmap2.get(_position).get("bookservice_id"));
 
 
 				desc.setText("Service name: "+ listmap2.get(_position).get("bookservice_name")+", Description: "+listmap2.get(_position).get("bookservice_defaultdescription"));
@@ -308,33 +357,34 @@ Util.showMessage(getActivity(), message);
 					break;
 				}
 */
-				switch (Objects.requireNonNull(listmap2.get(_position).get("book_status")).toString())
-				{
+				support.setVisibility(View.GONE);
+
+				switch (Objects.requireNonNull(listmap2.get(_position).get("book_status")).toString()) {
 
 					case "confirm": status.setText("Confirmed");
 					card.setCardBackgroundColor(0xFF226df0);
-					support.setVisibility(View.VISIBLE);
+
 					cancel.setVisibility(View.GONE);
 						note.setVisibility(View.GONE);
 						break;
 					case "done": status.setText("Completed");
 					   card.setCardBackgroundColor(0xFF23ad0a);
-					   support.setVisibility(View.GONE);
-						cancel.setVisibility(View.GONE);
+					   support.setVisibility(View.VISIBLE);
+					   cancel.setVisibility(View.GONE);
 						note.setVisibility(View.GONE);
 						break;
 
 
 					case "cancel": status.setText("Cancelled");
 						card.setCardBackgroundColor(0xFFd1431b);
-						support.setVisibility(View.GONE);
+
 						cancel.setVisibility(View.GONE);
 						note.setVisibility(View.GONE);
 						break;
 
 					default: status.setText("Progress");
-					card.setCardBackgroundColor(0xFFe39929);
-					support.setVisibility(View.GONE);
+					card.setCardBackgroundColor(0xFFe89920);
+
 					note.setVisibility(View.VISIBLE);
 					cancel.setVisibility(View.VISIBLE);
 
@@ -343,16 +393,60 @@ Util.showMessage(getActivity(), message);
 
 
 //support.setVisibility(View.GONE);
+				cancel.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						try {
 
+							//Toast.makeText(getContext(), listmap2.get(_position).get("bookservice_id").toString(), Toast.LENGTH_SHORT).show();
+							request_cancel_booking_api(listmap2.get(_position).get("bookservice_id").toString());
+
+
+						}catch (Exception e){
+							SharedPreferences sharedPreferences = getContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+
+							request_user_book_list_api(sharedPreferences.getString("customer_emailid", "")+"");
+
+						}
+					}
+				});
 				support.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
 
-						Intent intent = new Intent(Intent.ACTION_VIEW);
-						intent.setData(Uri.parse("tel:1234567890"));
-						startActivity(intent);
+						String show ="Booked on: "+listmap2.get(_position).get("bookservice_date")+"\n\n"+
+								"Booking confirm on\n"+listmap2.get(_position).get("bookservice_confirmdate")+"\n\n"+
+								"Service complete on\n" + listmap2.get(_position).get("bookservice_completedate")+"\n\n"+
+								"Booked Category\n"+"" + listmap2.get(_position).get("bookservice_categoryname")+"\n\n"+
+								"Booked Service\n"+listmap2.get(_position).get("bookservice_name")+"\n\n"+
+								"Service description\n" +listmap2.get(_position).get("bookservice_defaultdescription")+" "+listmap2.get(_position).get("bookservice_description")+"\n\n"+
+								"Service Location\n"+listmap2.get(_position).get("bookservice_location");
+
+
+						AlertDialog.Builder al = new AlertDialog.Builder(getContext());
+						al.setTitle("Booking details");
+						al.setMessage(show);
+						al.setCancelable(false);
+						al.setPositiveButton("close", new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialogInterface, int i) {
+
+							}
+						});
+
+						al.setNeutralButton("Need help?", new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialogInterface, int i) {
+Intent call = new Intent(Intent.ACTION_VIEW);
+call.setData(Uri.parse("tel:9040015300"));
+startActivity(call);
+							}
+						});
+
+						al.create().show();
 					}
 				});
+
 
 
 
@@ -375,7 +469,7 @@ Util.showMessage(getActivity(), message);
 
 			}catch (Exception e)
 			{
-				//showMessage("887 line "+e.toString());
+
 			}
 
 

@@ -119,6 +119,7 @@ Util.showMessage(getApplicationContext(), message);
             {
                 Util.showMessage(getApplicationContext(), add_qty.getText().toString()+" coin added");
                 request_added_coin_info(user_id,add_qty.getText().toString()+"",add_qty.getText().toString()+" added coin");
+                add_qty.setText("");
                 request_get_coin_count(user_id);
             }
 
@@ -137,6 +138,7 @@ Util.showMessage(getApplicationContext(), message);
                 if(response.contains("200"))
                 {
                     Util.showMessage(getApplicationContext(), use_qty.getText().toString()+" coin used");
+                    use_qty.setText("");
                     request_used_coin_info(user_id,use_qty.getText().toString()+"",use_qty.getText().toString()+" used coin");
                     request_get_coin_count(user_id);
                 }
