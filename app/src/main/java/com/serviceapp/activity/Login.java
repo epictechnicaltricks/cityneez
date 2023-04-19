@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -143,7 +144,10 @@ try {
         forgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), forgotpasw.class));
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse("http://gvit.in/Cityneedz/resetpassword.php"));
+                startActivity(i);
+                //startActivity(new Intent(getApplicationContext(), forgotpasw.class));
             }
         });
 

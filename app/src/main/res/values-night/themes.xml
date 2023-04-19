@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.ServiceApp" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#0C0C10</item>
+        <item name="colorPrimary">#FFC107</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -16,7 +16,7 @@
 
     <style	name="NoActionBar"	parent="@android:style/Theme.Material.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">#FFC107</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -26,22 +26,24 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-       </style>
+    </style>
 
 
-    <!--  new added here -->
 
-    <color name="text_color">#000</color>
-    <color name="lite_text_color">#989797</color>
-    <color name="bg_color">#fff</color>
-    <color name="lite_bg_color">#ECEBEB</color>
-    <color name="bottom_navigation_color">#FAFAFA</color>
+
+  <!--  new added here -->
+    <color name="text_color">#fff</color>
+    <color name="lite_text_color">#bdbdbd</color>
+    <color name="bg_color">#000</color>
+    <color name="lite_bg_color">#353535</color>
+
+    <color name="bottom_navigation_color">#BF18181A</color>
 
     <style name="BottomNavigationViewTextStyle">
         <item name="fontFamily">@font/productsans_bold</item>
     </style>
 
-<color name="bottom_nav_color">#8A5BDF</color>
+    <color name="bottom_nav_color">#C9AAFF</color>
 
 
 </resources>

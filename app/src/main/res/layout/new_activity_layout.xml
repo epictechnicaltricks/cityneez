@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context=".new_design.activity.Layout">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                app:labelVisibilityMode="labeled"
+                android:id="@+id/bottomnavigation1"
+                android:layout_width="match_parent"
+                android:elevation="10dp"
+                app:itemTextAppearanceActive="@style/BottomNavigationViewTextStyle"
+                app:itemTextAppearanceInactive="@style/BottomNavigationViewTextStyle"
+                android:background="@color/bottom_navigation_color"
+
+                app:itemIconTint="@drawable/bottom_nav_icon_color_selector"
+                app:itemTextColor="@drawable/bottom_nav_icon_color_selector"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

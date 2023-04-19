@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Service App</string>
-      <!--<string name="api_path">https://cityneedzapi.000webhostapp.com/php-auth-api-live/</string>-->
+    <!--<string name="api_path">https://cityneedzapi.000webhostapp.com/php-auth-api-live/</string>-->
     <string name="insert_into_coin_used_id_description_user_id_coins_used_date_of_use_values_null_desc_54_122_current_timestamp">INSERT INTO `coin_used` (`id`, `description`, `user_id`, `coins_used`, `date_of_use`) VALUES (NULL, \'desc\', \'54\', \'122\', \'current_timestamp()\');</string>
-        <string name="api_path">http://gvit.in/cityneedsapp/</string>
+    <string name="api_path">http://gvit.in/cityneedsapp/</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

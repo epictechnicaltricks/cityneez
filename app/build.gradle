@@ -54,6 +54,8 @@ dependencies {
     //Lottie
     implementation "com.airbnb.android:lottie:3.4.0"
 
+    // blur library
+    // implementation 'com.eightbitlab:blurview:1.6.6'
 
 
 
