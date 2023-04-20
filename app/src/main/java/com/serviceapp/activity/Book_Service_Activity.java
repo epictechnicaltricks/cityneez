@@ -36,6 +36,7 @@ import com.serviceapp.RadialProgressView;
 import com.serviceapp.RequestNetwork;
 import com.serviceapp.RequestNetworkController;
 import com.serviceapp.Util;
+import com.serviceapp.new_design.activity.LayoutActivity;
 
 import java.security.cert.Extension;
 import java.util.ArrayList;
@@ -430,7 +431,8 @@ public class Book_Service_Activity extends AppCompatActivity {
                 // Set the positive button with yes name Lambda OnClickListener method is use of DialogInterface interface.
                 builder.setPositiveButton("OK", (DialogInterface.OnClickListener) (dialog, which) -> {
 
-                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                    // startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                    startActivity(new Intent(getApplicationContext(), LayoutActivity.class));
                     finish();
                     Toast.makeText(Book_Service_Activity.this, "SUCCESSFULLY BOOKED", Toast.LENGTH_LONG).show();
                 });

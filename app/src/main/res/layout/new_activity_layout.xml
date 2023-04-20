@@ -5,43 +5,88 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_color"
-    tools:context=".new_design.activity.Layout">
+    tools:context=".new_design.activity.LayoutActivity">
 
+    <androidx.drawerlayout.widget.DrawerLayout
 
-    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
 
-        <LinearLayout
-            android:orientation="vertical"
+        tools:openDrawer="start"
+        android:fitsSystemWindows="true"
+        android:id="@+id/drawer">
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/viewpager1"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-        </LinearLayout>
+                app:titleTextColor="@color/black"
+                android:layout_height="wrap_content"
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:gravity="bottom"
+                android:background="@color/cardview_shadow_start_color"/>
+
+            <FrameLayout
+                android:id="@+id/frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/toolbar" />
+        </RelativeLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav"
+            android:layout_gravity="start"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:menu="@menu/menu"
+            app:headerLayout="@layout/myprofile"
+            tools:ignore="MissingConstraints" />
+
+
+
+
+
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                app:labelVisibilityMode="labeled"
-                android:id="@+id/bottomnavigation1"
+
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:elevation="10dp"
-                app:itemTextAppearanceActive="@style/BottomNavigationViewTextStyle"
-                app:itemTextAppearanceInactive="@style/BottomNavigationViewTextStyle"
-                android:background="@color/bottom_navigation_color"
+                android:layout_height="match_parent">
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewpager1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
 
-                app:itemIconTint="@drawable/bottom_nav_icon_color_selector"
-                app:itemTextColor="@drawable/bottom_nav_icon_color_selector"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    app:labelVisibilityMode="labeled"
+                    android:id="@+id/bottomnavigation1"
+                    android:layout_width="match_parent"
+                    android:elevation="10dp"
+                    app:itemTextAppearanceActive="@style/BottomNavigationViewTextStyle"
+                    app:itemTextAppearanceInactive="@style/BottomNavigationViewTextStyle"
+                    android:background="@color/bottom_navigation_color"
 
-    </RelativeLayout>
+                    app:itemIconTint="@drawable/bottom_nav_icon_color_selector"
+                    app:itemTextColor="@drawable/bottom_nav_icon_color_selector"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
 
 
 

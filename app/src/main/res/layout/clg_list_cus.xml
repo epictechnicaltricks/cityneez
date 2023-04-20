@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <TextView
+        android:fontFamily="@font/productsans_regular"
+
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:layout_marginStart="0dp"

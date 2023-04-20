@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical"
+    android:gravity="top"
+    android:layout_marginTop="50px"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <!-- Circular Image View  -->
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="horizontal"
+
+     android:paddingTop="40sp"
+     android:paddingBottom="20sp"
+     android:background="#E8E4E4">
+     <androidx.cardview.widget.CardView
+         android:layout_width="60dp"
+         android:layout_height="60dp"
+         android:elevation="12dp"
+         android:id="@+id/view2"
+         app:cardCornerRadius="100dp"
+         android:layout_centerHorizontal="true"
+         android:innerRadius="0dp"
+         android:shape="ring"
+         android:thicknessRatio="1.9"
+         android:layout_margin="20sp">
+         <ImageView
+             android:scaleType="centerCrop"
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:id="@+id/imageView1"
+             android:src="@drawable/logo2"
+             android:layout_alignParentTop="true"
+             android:layout_centerHorizontal="true">
+         </ImageView>
+     </androidx.cardview.widget.CardView>
+     <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+          android:layout_marginTop="20sp">
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Somu"
+             android:layout_marginTop="7sp"
+             android:textColor="@color/black"
+             android:textSize="20dp"
+             android:fontFamily="@font/productsans_bold"/>
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="gvit234@gmail.com"
+             android:textColor="#8F8585"
+             android:textSize="17dp"
+             android:fontFamily="@font/productsans_regular"/>
+
+     </LinearLayout>
+ </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#9F9B9B"/>
+
+<!--    <com.google.android.material.navigation.NavigationView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:menu="@menu/menu"/>-->
+
+
+</LinearLayout>

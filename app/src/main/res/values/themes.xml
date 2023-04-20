@@ -35,7 +35,7 @@
     <color name="lite_text_color">#989797</color>
     <color name="bg_color">#fff</color>
     <color name="lite_bg_color">#ECEBEB</color>
-    <color name="bottom_navigation_color">#FAFAFA</color>
+    <color name="bottom_navigation_color">#EDFAFAFA</color>
 
     <style name="BottomNavigationViewTextStyle">
         <item name="fontFamily">@font/productsans_bold</item>

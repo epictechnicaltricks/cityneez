@@ -15,7 +15,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-
+android:fontFamily="@font/productsans_regular"
             android:padding="7dp"
             android:background="#350B7E"
             android:gravity="center"
@@ -44,6 +44,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:fontFamily="@font/productsans_bold"
                     android:layout_marginTop="5dp"
                     android:textSize="21sp"
                     android:textColor="#000000"
@@ -73,6 +74,7 @@ android:id="@+id/service_name"
 
 
             <TextView
+                android:fontFamily="@font/productsans_regular"
                 android:textStyle="bold"
                 android:id="@+id/date"
                 android:textColor="#FFFFFF"
@@ -82,6 +84,7 @@ android:alpha="0.6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView
+                android:fontFamily="@font/productsans_regular"
                 android:id="@+id/desc"
                 android:textColor="#FFFFFF"
 android:layout_marginTop="10dp"
@@ -98,6 +101,7 @@ android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <com.google.android.material.button.MaterialButton
+                  android:fontFamily="@font/productsans_bold"
                    android:visibility="visible"
                     android:id="@+id/support"
                     android:layout_width="wrap_content"
@@ -109,6 +113,7 @@ android:layout_marginTop="10dp"
 
 
                 <com.google.android.material.button.MaterialButton
+                    android:fontFamily="@font/productsans_bold"
                     android:visibility="visible"
                     android:layout_width="wrap_content"
                     app:backgroundTint="#000000"
@@ -124,6 +129,7 @@ android:id="@+id/cancel"
             </LinearLayout>
 
             <TextView
+                android:fontFamily="@font/productsans_regular"
                 android:id="@+id/note"
                 android:textColor="#F8F7F7"
                 android:textSize="12sp"

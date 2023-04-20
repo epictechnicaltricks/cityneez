@@ -1,42 +1,41 @@
 package com.serviceapp.new_design.activity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.renderscript.Allocation;
-import android.renderscript.Element;
-import android.renderscript.RenderScript;
-import android.renderscript.ScriptIntrinsicBlur;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.FrameLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 import com.serviceapp.R;
-import com.serviceapp.activity.HomeActivity;
 import com.serviceapp.fragements.Booking_Fragment;
-import com.serviceapp.fragements.Home_Fragment;
 import com.serviceapp.fragements.MyAccount_Fragment;
-import com.serviceapp.fragements.Shop_now_Fragment;
 import com.serviceapp.new_design.frags.New_Account_Frag;
 import com.serviceapp.new_design.frags.New_Booking_Frag;
 import com.serviceapp.new_design.frags.New_Category_Frag;
 import com.serviceapp.new_design.frags.New_Coin_Frag;
 import com.serviceapp.new_design.frags.New_Home_Frag;
 
-public class Layout extends AppCompatActivity {
+public class LayoutActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomnavigation1;
     private ViewPager viewpager1;
+
+    DrawerLayout drawer;
+    FrameLayout frame;
+    NavigationView nav;
+    ActionBarDrawerToggle toggle;
 
 
 
@@ -59,10 +58,31 @@ public class Layout extends AppCompatActivity {
         viewpager1 =  findViewById(R.id.viewpager1);
         bottomnavigation1 = findViewById(R.id.bottomnavigation1);
 
+        drawer = findViewById(R.id.drawer);
+        nav = findViewById(R.id.nav);
+        frame = findViewById(R.id.frame);
 
+        Toolbar toolbar =  findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+
+        toggle = new ActionBarDrawerToggle(this, drawer, toolbar,R.string.open, R.string.close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+//        Intent intent= new Intent(getApplicationContext(), MainActivity.class);
+//        startActivity(intent);
+
+
+        nav.setNavigationItemSelectedListener(menuItem -> {
+
+
+            return true;
+        });
 
 
     }
+
+
 
 
     private void Logic() {
@@ -102,10 +122,14 @@ public class Layout extends AppCompatActivity {
 
         viewpager1.setAdapter(new MyFragmentAdapter(getApplicationContext(), getSupportFragmentManager(), 5));
         bottomnavigation1.getMenu().add(0, 0, 0, "Home").setIcon(R.drawable.home);
-        bottomnavigation1.getMenu().add(0, 1, 0, "Coins").setIcon(R.drawable.coin);
+        bottomnavigation1.getMenu().add(0, 1, 0, "Shop").setIcon(R.drawable.shop);
         bottomnavigation1.getMenu().add(0, 2, 0, "Categories").setIcon(R.drawable.category);
         bottomnavigation1.getMenu().add(0, 3, 0, "Bookings").setIcon(R.drawable.book);
         bottomnavigation1.getMenu().add(0, 4, 0, "Account").setIcon(R.drawable.user);
+    }
+
+    public void openDrawer() {
+        drawer.openDrawer(GravityCompat.START);
     }
 
 
@@ -146,12 +170,12 @@ public class Layout extends AppCompatActivity {
 
             if (_position22 == 3) {
 
-                return new New_Booking_Frag();
+                return new Booking_Fragment();
             }
 
             if (_position22 == 4) {
 
-                return new New_Account_Frag();
+                return new MyAccount_Fragment();
             }
 
             return null;

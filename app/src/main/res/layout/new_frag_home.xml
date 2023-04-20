@@ -8,6 +8,7 @@
 
 
 	<LinearLayout
+		android:paddingBottom="40dp"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:orientation="vertical"
@@ -15,6 +16,7 @@
 
 
 		<LinearLayout
+			android:layout_marginTop="10dp"
 			android:padding="12dp"
 
 
@@ -58,8 +60,22 @@
 					android:scaleType="centerInside"
 
 					android:src="@drawable/baseline_shopping_cart_24"
-					android:layout_marginStart="200dp"
+
 					android:background="@drawable/background"/>
+
+				<ImageView
+					android:id="@+id/menu"
+					app:tint="@color/text_color"
+					android:layout_marginEnd="10dp"
+					android:layout_width="35sp"
+					android:layout_height="35sp"
+					android:scaleType="centerInside"
+
+					android:src="@drawable/baseline_dehaze_24"
+
+					android:background="@drawable/background"/>
+
+
 			</LinearLayout>
 
 
@@ -102,11 +118,106 @@
 			android:layout_height="150dp" />
 
 
+		<LinearLayout
+			android:layout_marginTop="15dp"
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+			<TextView
+				android:layout_marginStart="10dp"
+				android:layout_weight="1"
+				android:fontFamily="@font/productsans_bold"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Top Services"
+				android:textSize="20sp"
+				android:textColor="@color/text_color" />
+			<TextView
+				android:layout_marginEnd="20dp"
+				android:layout_weight="1"
+				android:gravity="right"
+				android:fontFamily="@font/productsans_bold"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="View all"
+				android:alpha="0.7"
+				android:textSize="15sp"
+				android:textColor="@color/bottom_nav_color" />
+		</LinearLayout>
 
+
+		<androidx.recyclerview.widget.RecyclerView
+			android:clipToPadding="false"
+			android:id="@+id/recyclerview2"
+			android:layout_gravity="center"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+
+			android:layout_marginBottom="20dp"
+
+			android:padding="0dp"/>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+			<TextView
+				android:layout_marginStart="10dp"
+				android:layout_weight="1"
+				android:fontFamily="@font/productsans_bold"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="All Services"
+				android:textSize="20sp"
+				android:textColor="@color/text_color" />
+			<TextView
+				android:layout_marginEnd="20dp"
+				android:layout_weight="1"
+				android:gravity="right"
+				android:fontFamily="@font/productsans_bold"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="View all"
+				android:alpha="0.7"
+					android:textSize="15sp"
+				android:textColor="@color/bottom_nav_color" />
+		</LinearLayout>
+
+
+
+
+		<androidx.recyclerview.widget.RecyclerView
+			android:clipToPadding="false"
+			android:id="@+id/recyclerview1"
+			android:layout_gravity="center"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+android:layout_marginBottom="0dp"
+tools:listitem="@layout/service_list_custom"
+			android:padding="0dp"/>
+
+		<ImageView
+			android:layout_gravity="top"
+			android:scaleType="centerInside"
+
+			android:src="@drawable/test_home"
+			android:layout_width="match_parent"
+			android:layout_height="800dp"/>
+		<ImageView
+			android:layout_gravity="top"
+			android:scaleType="centerInside"
+
+			android:src="@drawable/test_home2"
+			android:layout_width="match_parent"
+			android:layout_height="850dp"/>
 
 
 
 	</LinearLayout>
+
+
 
 
 
