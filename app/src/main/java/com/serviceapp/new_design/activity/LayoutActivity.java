@@ -21,6 +21,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.serviceapp.R;
 import com.serviceapp.fragements.Booking_Fragment;
 import com.serviceapp.fragements.MyAccount_Fragment;
+import com.serviceapp.fragements.Shop_now_Fragment;
 import com.serviceapp.new_design.frags.New_Account_Frag;
 import com.serviceapp.new_design.frags.New_Booking_Frag;
 import com.serviceapp.new_design.frags.New_Category_Frag;
@@ -161,7 +162,7 @@ public class LayoutActivity extends AppCompatActivity {
                 return new New_Home_Frag();
             }
             if (_position22 == 1) {
-                return new New_Coin_Frag();
+                return new Shop_now_Fragment();
             }
             if (_position22 == 2) {
 

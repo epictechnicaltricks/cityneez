@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#403636"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="15dp"
+        app:cardCornerRadius="20dp"
+        android:elevation="5dp"
+
+        app:cardBackgroundColor="#000"
+        android:translationY="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:background="#301B1B"
+                    android:elevation="10dp"
+                    android:id="@+id/l"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:onClick="close"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="0dp"
+
+                        android:id="@+id/back"
+                        android:layout_width="25dp"
+                        android:layout_height="20dp"
+                        app:tint="#fff"
+                        android:src="@drawable/baseline_arrow_back_24"
+                        android:scaleType="center"/>
+
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:fontFamily="@font/productsans_regular"
+
+                        android:layout_weight="1"
+                        android:id="@+id/textview1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="0dp"
+                        android:padding="3dp"
+                        android:text="Order an item"
+                        android:textSize="25sp"
+                     
+                        android:textColor="#fff"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <ScrollView
+                android:scrollbars="none"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+                <LinearLayout
+
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:fontFamily="@font/productsans_regular"
+
+                        android:layout_margin="10dp"
+                        android:textColor="#fff"
+                        android:textSize="20sp"
+                     
+                        android:text="Select Item"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <Spinner
+
+                        android:id="@+id/spinner_categories"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="0dp"
+                        android:spinnerMode="dropdown"/>
+
+                    <TextView
+                        android:visibility="gone"
+                        android:layout_margin="10dp"
+                        android:textColor="#fff"
+                        android:textSize="20sp"
+                     
+                        android:text="Select Quantity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <Spinner
+
+                        android:visibility="gone"
+                        android:id="@+id/spinner_services"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="0dp"
+                        android:spinnerMode="dropdown"/>
+
+
+
+
+
+                    <!--     <TextView
+                             android:layout_margin="10dp"
+                             android:textColor="#fff"
+                             android:textSize="20sp"
+                          
+                             android:text="Default description"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"/>
+
+                         <Spinner
+
+
+                             android:id="@+id/spinner_description"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:padding="0dp"
+                             android:spinnerMode="dropdown"/>-->
+
+
+                    <LinearLayout
+                        android:visibility="visible"
+                        android:orientation="vertical"
+                        android:id="@+id/description_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+
+
+
+                        <TextView
+                            android:fontFamily="@font/productsans_regular"
+
+                            android:layout_margin="10dp"
+                            android:textColor="#fff"
+                            android:textSize="20sp"
+                         
+                            android:text="Enter Quantity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <EditText
+                                android:fontFamily="@font/productsans_regular"
+
+                                android:maxLength="5"
+                                android:inputType="phone"
+                                android:textColorHint="#4E2B2B"
+                                android:id="@+id/desc"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:textColor="#fff"
+                                android:textSize="20sp"
+                             
+                                android:text="1"
+                                android:hint="1 or 2"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+
+                            <!--Spinner widget-->
+                            <Spinner
+                                android:padding="0dp"
+                                android:layout_marginEnd="15dp"
+                                android:background="#4E2B2B"
+
+                                android:layout_weight="1"
+                                android:id="@+id/qty_type_spinner"
+                                android:layout_height="50dp"
+                                android:layout_width="200dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+
+                    <TextView
+                        android:fontFamily="@font/productsans_regular"
+
+                        android:id="@+id/price"
+                        android:layout_margin="10dp"
+                        android:textColor="#F44336"
+                        android:textSize="20sp"
+                     
+                        android:text="Price : ₹0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                    <TextView
+                        android:fontFamily="@font/productsans_regular"
+
+                        android:layout_margin="10dp"
+                        android:textColor="#fff"
+                        android:textSize="20sp"
+                     
+                        android:text="Select Order type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <Spinner
+                        android:id="@+id/spinner_services_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="0dp"
+                        android:spinnerMode="dropdown"/>
+
+
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+
+                            android:layout_margin="10dp"
+                            android:textColor="#fff"
+                            android:textSize="18sp"
+                         
+                            android:text="Want to booking this for any other person?"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <RadioGroup
+                            android:layout_marginBottom="10dp"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/radioGroup">
+
+                            <RadioButton
+                                android:textColor="#fff"
+                                android:layout_marginLeft="10dp"
+                                android:id="@+id/radio_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="  YES"
+                                android:layout_marginTop="10dp"
+                                android:checked="false"
+                                android:textSize="17dp" />
+
+
+                            <RadioButton
+                                android:layout_marginLeft="10dp"
+                                android:textColor="#fff"
+                                android:id="@+id/radio_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="  NO"
+
+                                android:layout_marginTop="10dp"
+                                android:checked="false"
+                                android:textSize="17dp" />
+
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+
+
+
+
+
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:visibility="visible"
+                        android:id="@+id/other_person_layout_pickup"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:fontFamily="@font/productsans_regular"
+
+                            android:layout_margin="10dp"
+                            android:textColor="#fff"
+                            android:textSize="20sp"
+                         
+                            android:text="Contact person number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:fontFamily="@font/productsans_regular"
+
+                            android:textColorHint="#4E2B2B"
+                            android:id="@+id/person_number"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:textColor="#fff"
+                            android:textSize="20sp"
+                         
+                            android:maxLength="10"
+                            android:inputType="phone"
+                            android:hint="Contact person number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:fontFamily="@font/productsans_regular"
+
+                            android:layout_margin="10dp"
+                            android:textColor="#fff"
+                            android:textSize="18sp"
+                         
+                            android:text="Contact person email ( You receive all updates on this email)"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:fontFamily="@font/productsans_regular"
+
+                            android:textColorHint="#4E2B2B"
+                            android:id="@+id/person_email"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:textColor="#fff"
+                            android:textSize="20sp"
+                         
+                            android:hint="Contact person email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:visibility="visible"
+                        android:id="@+id/other_person_layout"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+
+                        <TextView
+                            android:fontFamily="@font/productsans_regular"
+
+                            android:layout_margin="10dp"
+                            android:textColor="#fff"
+                            android:textSize="20sp"
+                         
+
+                            android:text="Contact person name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+
+
+
+
+
+                        <EditText
+                            android:fontFamily="@font/productsans_regular"
+
+                            android:id="@+id/person_name"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:textColor="#fff"
+                            android:textSize="20sp"
+                         
+                            android:textColorHint="#4E2B2B"
+                            android:hint="Enter contact person name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+
+
+                        <TextView
+                            android:fontFamily="@font/productsans_regular"
+
+                            android:layout_margin="10dp"
+                            android:textColor="#fff"
+                            android:textSize="20sp"
+                         
+                            android:text="Contact person address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:fontFamily="@font/productsans_regular"
+
+                            android:textColorHint="#4E2B2B"
+                            android:id="@+id/person_address"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:textColor="#fff"
+                            android:textSize="20sp"
+                         
+                            android:hint="Contact person address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:fontFamily="@font/productsans_regular"
+
+                            android:layout_margin="10dp"
+                            android:textColor="#fff"
+                            android:textSize="20sp"
+                         
+                            android:text="Address pincode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:fontFamily="@font/productsans_regular"
+
+                            android:textColorHint="#4E2B2B"
+                            android:id="@+id/person_pincode"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:textColor="#fff"
+                            android:textSize="20sp"
+                         
+                            android:maxLength="6"
+                            android:inputType="phone"
+                            android:hint="Enter address pincode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:fontFamily="@font/productsans_regular"
+
+                        android:layout_margin="10dp"
+                        android:textColor="#fff"
+                        android:textSize="20sp"
+                     
+                        android:text="Select Payment mode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                    <Spinner
+
+
+                        android:id="@+id/spinner_payment_mode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="0dp"
+                        android:spinnerMode="dropdown"/>
+
+                    <TextView
+                        android:fontFamily="@font/productsans_regular"
+
+                        android:id="@+id/date_text"
+                        android:textColor="#fff"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:text=""
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_marginBottom="60dp"
+                        android:fontFamily="@font/productsans_regular"
+
+                        android:id="@+id/book_now"
+                        android:onClick="book"
+                        android:padding="14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="50dp"
+                        android:backgroundTint="#F44336"
+                        android:text="ORDER NOW"
+                        app:cornerRadius="50sp">
+
+
+                    </com.google.android.material.button.MaterialButton>
+
+
+
+
+
+
+
+                    <ListView
+                        android:id="@+id/listview_categories"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:padding="8dp"
+                        android:choiceMode="none"/>
+
+                    <ListView
+                        android:id="@+id/listview_sevices"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:padding="8dp"
+                        android:choiceMode="none"/>
+
+
+                    <ListView
+                        android:id="@+id/listview_service_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:padding="8dp"
+                        android:choiceMode="none"/>
+
+                    <ListView
+                        android:id="@+id/listview_payment_mode"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:padding="8dp"
+                        android:choiceMode="none"/>
+
+
+                    <ListView
+                        android:id="@+id/listview_default_desciption"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:padding="8dp"
+                        android:choiceMode="none"/>
+
+
+                </LinearLayout>
+
+
+
+            </ScrollView>
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+</LinearLayout>
