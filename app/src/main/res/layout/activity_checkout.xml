@@ -247,7 +247,7 @@
                  android:layout_height="22dp"
                  android:layout_gravity="center"
                  android:src="@drawable/bag"
-                 app:tint="#fff" />
+                 app:tint="#ffffff" />
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
