@@ -41,7 +41,7 @@ public class New_Category_Frag extends  Fragment  {
 
 
 
-	private RecyclerView recyclerview2;
+	private RecyclerView recyclerview2, recyclerview3, recyclerview4;
 
 
 	ArrayList<HashMap<String, Object>> array_map_top_services = new ArrayList<>();
@@ -58,6 +58,8 @@ public class New_Category_Frag extends  Fragment  {
 	private void initialize(Bundle _savedInstanceState, View _view) {
 
 		recyclerview2 = _view.findViewById(R.id.recyclerview2);
+		recyclerview3 = _view.findViewById(R.id.recyclerview3);
+		recyclerview4 = _view.findViewById(R.id.recyclerview4);
 
 
 	}
@@ -176,6 +178,11 @@ public class New_Category_Frag extends  Fragment  {
 
 
 		recyclerview2.setAdapter(new Recyclerview2Adapter(array_map_top_services));
+		recyclerview2.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL, false));
+		recyclerview3.setAdapter(new Recyclerview2Adapter(array_map_top_services));
+		recyclerview3.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL, false));
+		recyclerview4.setAdapter(new Recyclerview2Adapter(array_map_top_services));
+		recyclerview4.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL, false));
 
 
 
@@ -208,15 +215,15 @@ public class New_Category_Frag extends  Fragment  {
 
 		@NonNull
 		@Override
-		public Recyclerview2Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+		public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 			LayoutInflater _inflater = (LayoutInflater) requireContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);		View _v = _inflater.inflate(R.layout.top_service_custom, null);
 			RecyclerView.LayoutParams _lp = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 			_v.setLayoutParams(_lp);
-			return new Recyclerview2Adapter.ViewHolder(_v);
+			return new ViewHolder(_v);
 		}
 
 		@Override
-		public void onBindViewHolder(Recyclerview2Adapter.ViewHolder _holder, final int _position) {
+		public void onBindViewHolder(ViewHolder _holder, final int _position) {
 			View _view = _holder.itemView;
 
 			final CardView card = _view.findViewById(R.id.card);

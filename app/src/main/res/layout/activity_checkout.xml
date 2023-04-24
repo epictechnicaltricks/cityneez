@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/bg_color"
+    android:elevation="12dp"
+
+    android:layout_height="match_parent"
+    tools:context=".new_design.activity.Checkout_activity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <TextView
+        android:background="@color/lite_bg_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color"
+        android:fontFamily="@font/productsans_bold"
+        android:text="Checkout"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:padding="12sp"/>
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/productsans_bold"
+            android:text="Address"
+            android:textSize="23sp"
+           android:layout_margin="10sp"/>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="140sp"
+          app:cardBackgroundColor="@color/bottom_nav_color"
+            android:layout_margin="13sp"
+            app:cardCornerRadius="20sp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:maxLines="5"
+                android:ellipsize="end"
+                android:text="Room 702, Panchadeep Complex, Unit 4, Bhouma Nagar, Bhubaneswar, Odisha 751001"
+                android:fontFamily="@font/productsans_regular"
+                android:textSize="20sp"
+                android:padding="15sp"/>
+
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/productsans_bold"
+            android:text="Payment Method"
+            android:textSize="23sp"
+            android:layout_margin="10sp"/>
+
+           <RadioGroup
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <androidx.cardview.widget.CardView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="13sp"
+                   android:layout_weight="1"
+                   app:cardCornerRadius="20sp"
+                   android:elevation="10sp">
+               <RadioButton
+                   android:background="@color/lite_bg_color"
+                   android:text="   Paytm"
+                   android:fontFamily="@font/productsans_regular"
+                   android:textSize="20sp"
+                   android:textColor="@color/text_color"
+                   android:layout_width="match_parent"
+                   android:buttonTint="@color/bottom_nav_color"
+                   android:layout_height="wrap_content" />
+               </androidx.cardview.widget.CardView>
+               <androidx.cardview.widget.CardView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="13sp"
+                   android:layout_weight="1"
+                   app:cardCornerRadius="20sp"
+                   android:elevation="10sp">
+                   <RadioButton
+                       android:background="@color/lite_bg_color"
+                       android:text="   Phone pe"
+                       android:fontFamily="@font/productsans_regular"
+                       android:textSize="20sp"
+                       android:textColor="@color/text_color"
+                       android:layout_width="match_parent"
+                       android:buttonTint="@color/bottom_nav_color"
+                       android:layout_height="wrap_content" />
+               </androidx.cardview.widget.CardView>
+               <androidx.cardview.widget.CardView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="13sp"
+                   android:layout_weight="1"
+                   app:cardCornerRadius="20sp"
+                   android:elevation="10sp">
+                   <RadioButton
+                       android:background="@color/lite_bg_color"
+                       android:text="   Cash On Delivery"
+                       android:fontFamily="@font/productsans_regular"
+                       android:textSize="20sp"
+                       android:textColor="@color/text_color"
+                       android:layout_width="match_parent"
+                       android:buttonTint="@color/bottom_nav_color"
+                       android:layout_height="wrap_content" />
+               </androidx.cardview.widget.CardView>
+
+
+           </RadioGroup>
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/productsans_bold"
+            android:text="Shopping Bill"
+            android:textSize="23sp"
+            android:layout_margin="10sp"/>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:layout_margin="20sp">
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="#b4b4b4"
+                   android:fontFamily="@font/productsans_regular"
+                   android:text="Shipping fee"
+                   android:textSize="20sp"
+                   android:layout_weight="1" />
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="#b4b4b4"
+                   android:fontFamily="@font/productsans_regular"
+                   android:text="₹50"
+                   android:textSize="20sp" />
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="#b4b4b4"
+                   android:fontFamily="@font/productsans_regular"
+                   android:text="Discount"
+                   android:textSize="20sp"
+                   android:layout_weight="1" />
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="#b4b4b4"
+                   android:fontFamily="@font/productsans_regular"
+                   android:text="5%"
+                   android:textSize="20sp" />
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="#b4b4b4"
+                   android:fontFamily="@font/productsans_regular"
+                   android:text="Product Price"
+                   android:textSize="20sp"
+                   android:layout_weight="1" />
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="#b4b4b4"
+                   android:fontFamily="@font/productsans_regular"
+                   android:text="₹550"
+                   android:textSize="20sp" />
+
+           </LinearLayout>
+           <View
+               android:layout_width="match_parent"
+               android:layout_height="2sp"
+               android:background="#b4b4b4" />
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:padding="5sp">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="@color/text_color"
+                   android:fontFamily="@font/productsans_regular"
+                   android:text="Total"
+                   android:textSize="20sp"
+                   android:textStyle="bold"
+                   android:layout_weight="1" />
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="@color/text_color"
+                   android:fontFamily="@font/productsans_regular"
+                   android:text="₹570"
+                   android:textSize="20sp"
+                   android:textStyle="bold" />
+           </LinearLayout>
+       </LinearLayout>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10sp"
+            android:background="#fc8080"
+            app:cardCornerRadius="20sp">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:gravity="center"
+             android:background="@color/bottom_nav_color">
+             <ImageView
+                 android:layout_width="22dp"
+                 android:layout_height="22dp"
+                 android:layout_gravity="center"
+                 android:src="@drawable/bag"
+                 app:tint="#fff" />
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textColor="#fff"
+                 android:fontFamily="@font/productsans_bold"
+                 android:text="Buy Now"
+                 android:gravity="center"
+                 android:textSize="20sp"
+                 android:layout_margin="10sp"/>
+         </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+    </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

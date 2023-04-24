@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lite_bg_color"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ScrollView
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/mobile">
+
+                </ImageView>
+
+                <androidx.cardview.widget.CardView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="7dp"
+                    android:translationY="-20dp"
+                    app:cardBackgroundColor="@color/bg_color"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/dmsansbold"
+                                android:text="Apple iPhone 19 Pro Max"
+                                android:textColor="@color/text_color"
+                                android:textSize="20sp"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:layout_marginTop="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/dmsansbold"
+                                android:text="Price ₹1,23,00/-"
+                                android:textColor="#1C9122"
+
+                                android:textSize="20sp"
+                                android:textStyle="bold"/>
+
+
+                            <ScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_marginTop="15dp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/dmsansbold"
+                                        android:text="Overview"
+                                        android:textColor="@color/text_color"
+                                        android:textSize="17sp"
+                                        android:textStyle="bold"/>
+
+                                    <TextView
+                                        android:layout_marginBottom="10dp"
+                                        android:ellipsize="end"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/dmsansregular"
+                                        android:text="iPhone 19 Pro and 19 Pro Max. With Dynamic Island. Crash Detection. An innovative 248MP camera. And A26 Bionic. The new iPhone 19 sort of fits into this category of product. Just sort of, though, since Apple has redesigned the internals quite a bit to facilitate easier repairability, "
+                                        android:textColor="@color/text_color"
+                                        android:alpha="0.6"
+                                        android:textSize="17sp"
+                                        android:textStyle="bold"/>
+                                </LinearLayout>
+
+
+
+                            </ScrollView>
+
+
+
+                        </LinearLayout>
+
+
+
+
+
+
+
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            </ScrollView>
+
+
+
+
+        </LinearLayout>
+
+
+
+    <LinearLayout
+
+      android:layout_margin="5dp"
+        android:elevation="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/minus"
+                android:layout_marginStart="7dp"
+                app:cardBackgroundColor="@color/bg_color"
+                app:cardCornerRadius="100dp"
+                android:elevation="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+
+                    android:layout_margin="10dp"
+                    android:src="@drawable/minus"
+                    android:scaleType="centerInside"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:tint="@color/bottom_nav_color"/>
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/qty"
+                android:layout_margin="15dp"
+                android:text="1"
+                android:textSize="20sp"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/dmsansbold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/plus"
+                app:cardBackgroundColor="@color/bg_color"
+                app:cardCornerRadius="100dp"
+                android:elevation="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <ImageView
+
+                android:layout_margin="10dp"
+                android:src="@drawable/plus"
+                android:scaleType="centerInside"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:tint="@color/bottom_nav_color"/>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+        
+
+
+        <com.google.android.material.button.MaterialButton
+
+            android:onClick="add_To_cart"
+            android:layout_weight="1"
+            android:backgroundTint="@color/bottom_nav_color"
+            android:textColor="#fff"
+            android:fontFamily="@font/dmsansbold"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:text="ADD TO CART"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cornerRadius="50sp"
+            />
+
+
+
+
+    </LinearLayout>
+</LinearLayout>

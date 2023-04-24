@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,27 +23,26 @@ import androidx.viewpager.widget.ViewPager;
 import com.bumptech.glide.Glide;
 import com.google.android.material.button.MaterialButton;
 import com.serviceapp.R;
-import com.serviceapp.Util;
 import com.serviceapp.activity.Addressactivity;
 import com.serviceapp.activity.Book_Service_Activity;
-
 import com.serviceapp.new_design.activity.LayoutActivity;
-import com.serviceapp.new_design.activity.Show_fragment;
+import com.serviceapp.new_design.activity.Product_details_activity;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 
 
-public class New_Home_Frag extends  Fragment  {
+public class New_Khajana_Frag extends  Fragment  {
 
 	ViewPager viewpager1;
     MaterialButton bookService;
 
 	TextView user_name;
-	LinearLayout chicken, foodie;
 
 
 	private final Timer _timer = new Timer();
@@ -63,55 +61,35 @@ public class New_Home_Frag extends  Fragment  {
 	private RecyclerView recyclerview1;
 	private RecyclerView recyclerview2;
 
-	ImageView menu;
+	ImageView menu, back2;
 
 
 @NonNull
 	@Override
 	public View onCreateView(@NonNull LayoutInflater _inflater, @Nullable ViewGroup _container, @Nullable Bundle _savedInstanceState) {
-		View _view = _inflater.inflate(R.layout.new_frag_home, _container, false);
+		View _view = _inflater.inflate(R.layout.new_frag_khajana, _container, false);
 		initialize(_savedInstanceState, _view);
 		initializeLogic();
-		chicken  = _view.findViewById(R.id.chicken);
-		foodie = _view.findViewById(R.id.foodie);
-		chicken.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-
-				Intent i = new Intent();
-				i.putExtra("chicken","true");
-				i.setClass(getContext(), Show_fragment.class);
-				startActivity(i);
-
-			}
-		});
-	foodie.setOnClickListener(new View.OnClickListener() {
-		@Override
-		public void onClick(View view) {
-
-			Intent i = new Intent();
-			i.putExtra("chicken","false");
-			i.setClass(getContext(),  Show_fragment.class);
-			startActivity(i);
-
-
-		}
-	});
-
-
 		return _view;
 	}
-
-
+	
 	private void initialize(Bundle _savedInstanceState, View _view) {
 
 	viewpager1 = _view.findViewById(R.id.viewpager1);
     bookService = _view.findViewById(R.id.book_service);
+	back2 = _view.findViewById(R.id.back2);
 
 user_name = _view.findViewById(R.id.user_name);
 menu = _view.findViewById(R.id.menu);
 		recyclerview1 = _view.findViewById(R.id.recyclerview1);
 		recyclerview2 = _view.findViewById(R.id.recyclerview2);
+		back2.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+			//	getParentFragmentManager().beginTransaction().replace(R.id.frame, new New_Home_Frag(), null).addToBackStack(null).commit();
+				requireActivity().finish();
+			}
+		});
 
 	}
 
@@ -122,13 +100,13 @@ menu = _view.findViewById(R.id.menu);
 
 	private void initializeLogic() {
 
-	menu.setOnClickListener(new View.OnClickListener() {
+/*	menu.setOnClickListener(new View.OnClickListener() {
 		@Override
 		public void onClick(View view) {
 			//Util.showMessage(getContext(), "Hello");
 			((LayoutActivity) requireActivity()).openDrawer();
 		}
-	});
+	});*/
 
 
 	/*	SharedPreferences sh = getContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
@@ -153,19 +131,24 @@ menu = _view.findViewById(R.id.menu);
 	public void _slider () {
 		{
 			HashMap<String, Object> _item = new HashMap<>();
-			_item.put("image", "https://static.vecteezy.com/system/resources/previews/003/692/287/original/big-sale-discount-promotion-banner-template-with-blank-product-podium-scene-graphic-free-vector.jpg");
+			_item.put("image", "https://thesmmhub.com/NawabiBiryani/img/img/banner.png");
 			listmap.add(_item);
 		}
 
 		{
 			HashMap<String, Object> _item = new HashMap<>();
-			_item.put("image", "https://img.freepik.com/premium-vector/10-percent-off-discount-creative-composition-summer-sale-banner-with-kiwi-sale-banner-poster_3482-7313.jpg");
+			_item.put("image", "https://assets.limetray.com/assets/image_manager/uploads/7639/01-new-bannerwebbanner1920-617_1b.png");
 			listmap.add(_item);
 		}
 
 		{
 			HashMap<String, Object> _item = new HashMap<>();
-			_item.put("image", "https://media.istockphoto.com/id/1297404188/vector/beautiful-stylish-girl-portrait-with-pink-hair-banner-or-flyer-template-for-sale-on.jpg?s=612x612&w=0&k=20&c=DwuKT9vOlWlN1NCQQsU_P3qKq0PMsFTmlSXa103Jq8g=");
+			_item.put("image", "https://media.slidesgo.com/storage/15277355/international-hot-spicy-food-day-minitheme1639141970.jpg");
+			listmap.add(_item);
+		}
+		{
+			HashMap<String, Object> _item = new HashMap<>();
+			_item.put("image", "https://marketplace.canva.com/EAFanHj4_og/1/0/1600w/canva-yellow-red-modern-food-promotion-banner-landscape-D5j43WWUmtA.jpg");
 			listmap.add(_item);
 		}
 
@@ -215,40 +198,81 @@ menu = _view.findViewById(R.id.menu);
 	{
 		{
 			HashMap<String, Object> _item = new HashMap<>();
-			_item.put("image", "https://cdn.shopify.com/s/files/1/0541/1648/3271/files/chnage_ac_filter_nirvanabeing.jpg");
-			_item.put("sname","AC Service");
-			_item.put("sdesc","Professional maintenance of AC for optimal performance and efficiency.");
-			_item.put("price","₹500");
+			_item.put("image", "https://b.zmtcdn.com/data/pictures/2/3401492/8f3ea7919e016474ca24bb991bb9ba71.jpg");
+			_item.put("sname","Chimmanlal Puri Wale");
+			_item.put("sdesc","Chimmanlal Puri Wale North Indian.");
+			_item.put("price","₹100");
 			array_map_top_services.add(_item);
 		}
 
 		{
 			HashMap<String, Object> _item = new HashMap<>();
-			_item.put("image", "https://m.media-amazon.com/images/I/71d5fMDvq9L._SL1500_.jpg");
-			_item.put("sname","TV Service");
-			_item.put("sdesc","Professional maintenance of AC for optimal performance and efficiency.");
-			_item.put("price","₹500");
+			_item.put("image", "https://b.zmtcdn.com/data/pictures/1/3401611/14222536c2068f5fd1ab59238fe764ae.jpg");
+			_item.put("sname","Parata");
+			_item.put("sdesc","Odisha Parata");
+			_item.put("price","₹60");
 			array_map_top_services.add(_item);
 		}
 
 		{
 			HashMap<String, Object> _item = new HashMap<>();
-			_item.put("image", "https://stimg.cardekho.com/images/carexteriorimages/630x420/Kia/Seltos/6226/1679395459776/front-left-side-47.jpg?impolicy=resize&imwidth=480");
-			_item.put("sname","Car Service");
-			_item.put("sdesc","Car service includes inspection, maintenance, and repairs for optimal performance..");
-			_item.put("price","₹1500");
+			_item.put("image", "https://b.zmtcdn.com/data/dish_photos/c56/9ab654776d62e3fc530b175099114c56.jpg?output-format=webp");
+			_item.put("sname","Masala Dosa");
+			_item.put("sdesc","South Indian, Chinese, Nort");
+			_item.put("price","₹100");
 			array_map_top_services.add(_item);
 		}
 
 		{
 			HashMap<String, Object> _item = new HashMap<>();
-			_item.put("image", "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_532/t_high_res_category/categories/home_screen/plumber.jpg");
-			_item.put("sname","Plumbers Service");
-			_item.put("sdesc","Professional plumbing services for repairs, installations, and maintenance.");
-			_item.put("price","₹500");
+			_item.put("image", "https://b.zmtcdn.com/data/pictures/1/19141421/09e7e40ef2591f14cf7649dfe2a4fddf_o2_featured_v2.jpg");
+			_item.put("sname","Biriyani");
+			_item.put("sdesc","Hyderabad Dum Biriyani");
+			_item.put("price","₹150");
+			array_map_top_services.add(_item);
+		}
+		{
+			HashMap<String, Object> _item = new HashMap<>();
+			_item.put("image", "https://b.zmtcdn.com/data/dish_photos/62e/1bc4cb7e22aa217f47476e9f85c7a62e.jpg");
+			_item.put("sname","Pizza");
+			_item.put("sdesc","Ultimate Pizza");
+			_item.put("price","₹330");
+			array_map_top_services.add(_item);
+		}
+		{
+			HashMap<String, Object> _item = new HashMap<>();
+			_item.put("image", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Panta_Ilish.jpg/800px-Panta_Ilish.jpg");
+			_item.put("sname","Pakhal");
+			_item.put("sdesc","Taste is Best, Odisha Pakhal");
+			_item.put("price","₹200");
+			array_map_top_services.add(_item);
+		}
+		{
+			HashMap<String, Object> _item = new HashMap<>();
+			_item.put("image", "https://b.zmtcdn.com/data/dish_photos/259/0fda922de1a4bb811d947618767a8259.jpg");
+			_item.put("sname","Paneer Curry");
+			_item.put("sdesc","Butter mix");
+			_item.put("price","₹100");
+			array_map_top_services.add(_item);
+		}
+		{
+			HashMap<String, Object> _item = new HashMap<>();
+			_item.put("image", "https://b.zmtcdn.com/data/dish_photos/b3c/643bf49a78734ae361eac7bcb1d28b3c.jpg?output-format=webp");
+			_item.put("sname","Birthday Cake");
+			_item.put("sdesc","Birthday Cake");
+			_item.put("price","₹570");
+			array_map_top_services.add(_item);
+		}
+		{
+			HashMap<String, Object> _item = new HashMap<>();
+			_item.put("image", "https://b.zmtcdn.com/data/dish_photos/414/10f3db48b449023be44d8c25a99ac414.jpg");
+			_item.put("sname","Jusy Chicken");
+			_item.put("sdesc","Chicken juicy ..");
+			_item.put("price","₹150");
 			array_map_top_services.add(_item);
 		}
 
+		Collections.shuffle(array_map_top_services);
 
 		recyclerview1.setAdapter(new Recyclerview1Adapter(array_map_top_services));
 		recyclerview1.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -256,7 +280,7 @@ menu = _view.findViewById(R.id.menu);
 
 		recyclerview2.setAdapter(new Recyclerview2Adapter(array_map_top_services));
 		recyclerview2.setLayoutManager(new LinearLayoutManager(getContext()));
-		recyclerview2.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL, false));
+		recyclerview2.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL, true));
 
 
 
@@ -340,7 +364,13 @@ menu = _view.findViewById(R.id.menu);
 					@Override
 					public void onClick(View view) {
 						try {
-							SharedPreferences sh = getContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+
+
+							Intent i = new Intent();
+							i.setClass(getContext(), Product_details_activity.class);
+							startActivity(i);
+
+						/*	SharedPreferences sh = getContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
 							if(!sh.getString("token", "").equals("")) {
 
 
@@ -367,7 +397,7 @@ menu = _view.findViewById(R.id.menu);
 								startActivity(new Intent(getActivity(), Book_Service_Activity.class));
 
 							}
-
+*/
 						}catch (Exception e){
 							//	SharedPreferences sharedPreferences = getContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
 
@@ -588,7 +618,7 @@ menu = _view.findViewById(R.id.menu);
 		public  Object instantiateItem(ViewGroup _container,  final int _position) {
 			View _view = LayoutInflater.from(_context).inflate(R.layout.custom_slider, _container, false);
 
-			final androidx.cardview.widget.CardView cardview1 = _view.findViewById(R.id.cardview1);
+			final CardView cardview1 = _view.findViewById(R.id.cardview1);
 			final ImageView imageview1 = _view.findViewById(R.id.imageview1);
 
 

@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,27 +23,25 @@ import androidx.viewpager.widget.ViewPager;
 import com.bumptech.glide.Glide;
 import com.google.android.material.button.MaterialButton;
 import com.serviceapp.R;
-import com.serviceapp.Util;
 import com.serviceapp.activity.Addressactivity;
 import com.serviceapp.activity.Book_Service_Activity;
-
 import com.serviceapp.new_design.activity.LayoutActivity;
-import com.serviceapp.new_design.activity.Show_fragment;
+import com.serviceapp.new_design.activity.Product_details_activity;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 
 
-public class New_Home_Frag extends  Fragment  {
+public class New_Chicken_Frag extends  Fragment  {
 
 	ViewPager viewpager1;
     MaterialButton bookService;
 
 	TextView user_name;
-	LinearLayout chicken, foodie;
 
 
 	private final Timer _timer = new Timer();
@@ -63,58 +60,39 @@ public class New_Home_Frag extends  Fragment  {
 	private RecyclerView recyclerview1;
 	private RecyclerView recyclerview2;
 
-	ImageView menu;
+	ImageView menu, back;
 
 
 @NonNull
 	@Override
 	public View onCreateView(@NonNull LayoutInflater _inflater, @Nullable ViewGroup _container, @Nullable Bundle _savedInstanceState) {
-		View _view = _inflater.inflate(R.layout.new_frag_home, _container, false);
+		View _view = _inflater.inflate(R.layout.new_frag_chicken, _container, false);
 		initialize(_savedInstanceState, _view);
 		initializeLogic();
-		chicken  = _view.findViewById(R.id.chicken);
-		foodie = _view.findViewById(R.id.foodie);
-		chicken.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-
-				Intent i = new Intent();
-				i.putExtra("chicken","true");
-				i.setClass(getContext(), Show_fragment.class);
-				startActivity(i);
-
-			}
-		});
-	foodie.setOnClickListener(new View.OnClickListener() {
-		@Override
-		public void onClick(View view) {
-
-			Intent i = new Intent();
-			i.putExtra("chicken","false");
-			i.setClass(getContext(),  Show_fragment.class);
-			startActivity(i);
-
-
-		}
-	});
-
-
 		return _view;
 	}
-
-
+	
 	private void initialize(Bundle _savedInstanceState, View _view) {
 
 	viewpager1 = _view.findViewById(R.id.viewpager1);
     bookService = _view.findViewById(R.id.book_service);
+	back = _view.findViewById(R.id.back);
 
 user_name = _view.findViewById(R.id.user_name);
 menu = _view.findViewById(R.id.menu);
 		recyclerview1 = _view.findViewById(R.id.recyclerview1);
 		recyclerview2 = _view.findViewById(R.id.recyclerview2);
 
-	}
+		back.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				requireActivity().finish();
+				//getParentFragmentManager().beginTransaction().replace(R.id.frame, new New_Home_Frag(), null).addToBackStack(null).commit();
+			}
+		});
 
+
+	}
 
 
 
@@ -122,13 +100,13 @@ menu = _view.findViewById(R.id.menu);
 
 	private void initializeLogic() {
 
-	menu.setOnClickListener(new View.OnClickListener() {
+	/*menu.setOnClickListener(new View.OnClickListener() {
 		@Override
 		public void onClick(View view) {
 			//Util.showMessage(getContext(), "Hello");
 			((LayoutActivity) requireActivity()).openDrawer();
 		}
-	});
+	});*/
 
 
 	/*	SharedPreferences sh = getContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
@@ -153,19 +131,19 @@ menu = _view.findViewById(R.id.menu);
 	public void _slider () {
 		{
 			HashMap<String, Object> _item = new HashMap<>();
-			_item.put("image", "https://static.vecteezy.com/system/resources/previews/003/692/287/original/big-sale-discount-promotion-banner-template-with-blank-product-podium-scene-graphic-free-vector.jpg");
+			_item.put("image", "https://dao54xqhg9jfa.cloudfront.net/oms/09fd6524-d602-aaab-1c1c-f0d34b8152a0/original/New_Aesthetics_Banner_WayForward2-22_(1).jpeg");
 			listmap.add(_item);
 		}
 
 		{
 			HashMap<String, Object> _item = new HashMap<>();
-			_item.put("image", "https://img.freepik.com/premium-vector/10-percent-off-discount-creative-composition-summer-sale-banner-with-kiwi-sale-banner-poster_3482-7313.jpg");
+			_item.put("image", "https://ghizafoods.com/images/slider/Banner-1---Aug-19.jpg");
 			listmap.add(_item);
 		}
 
 		{
 			HashMap<String, Object> _item = new HashMap<>();
-			_item.put("image", "https://media.istockphoto.com/id/1297404188/vector/beautiful-stylish-girl-portrait-with-pink-hair-banner-or-flyer-template-for-sale-on.jpg?s=612x612&w=0&k=20&c=DwuKT9vOlWlN1NCQQsU_P3qKq0PMsFTmlSXa103Jq8g=");
+			_item.put("image", "https://ghizafoods.com/images/slider/Banner-2---Aug-19.jpg");
 			listmap.add(_item);
 		}
 
@@ -215,48 +193,88 @@ menu = _view.findViewById(R.id.menu);
 	{
 		{
 			HashMap<String, Object> _item = new HashMap<>();
-			_item.put("image", "https://cdn.shopify.com/s/files/1/0541/1648/3271/files/chnage_ac_filter_nirvanabeing.jpg");
-			_item.put("sname","AC Service");
-			_item.put("sdesc","Professional maintenance of AC for optimal performance and efficiency.");
-			_item.put("price","₹500");
+			_item.put("image", "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/4cad2ee9-9257-9109-62a1-da4082b2cf36/original/sho.jpg");
+			_item.put("sname","Chicken Curry Cut");
+			_item.put("sdesc","The ideal pack for a big, delicious curry feast.");
+			_item.put("price","₹230");
 			array_map_top_services.add(_item);
 		}
 
 		{
 			HashMap<String, Object> _item = new HashMap<>();
-			_item.put("image", "https://m.media-amazon.com/images/I/71d5fMDvq9L._SL1500_.jpg");
-			_item.put("sname","TV Service");
-			_item.put("sdesc","Professional maintenance of AC for optimal performance and efficiency.");
-			_item.put("price","₹500");
+			_item.put("image", "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/cbede953-c94c-3c48-a9a2-bad815fa1c3a/original/ChickenLegCurryCutpiecesHeroShot.jpg");
+			_item.put("sname","Chicken Leg Curry Cut");
+			_item.put("sdesc","Juicy bone-in leg pieces for delicious Curries or Biryanis.");
+			_item.put("price","₹250");
 			array_map_top_services.add(_item);
 		}
 
 		{
 			HashMap<String, Object> _item = new HashMap<>();
-			_item.put("image", "https://stimg.cardekho.com/images/carexteriorimages/630x420/Kia/Seltos/6226/1679395459776/front-left-side-47.jpg?impolicy=resize&imwidth=480");
-			_item.put("sname","Car Service");
-			_item.put("sdesc","Car service includes inspection, maintenance, and repairs for optimal performance..");
-			_item.put("price","₹1500");
+			_item.put("image", "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/9e8eaa76-7195-009a-7094-05b50bf1d41e/original/Goat-Boneless-Hero-Shot.jpg");
+			_item.put("sname","Goat Boneless");
+			_item.put("sdesc","25-34 pieces of cleaned, boneless Goat..");
+			_item.put("price","₹600");
 			array_map_top_services.add(_item);
 		}
 
 		{
 			HashMap<String, Object> _item = new HashMap<>();
-			_item.put("image", "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_532/t_high_res_category/categories/home_screen/plumber.jpg");
-			_item.put("sname","Plumbers Service");
-			_item.put("sdesc","Professional plumbing services for repairs, installations, and maintenance.");
-			_item.put("price","₹500");
+			_item.put("image", "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/ba21abee-4250-e9b5-0c64-05d9c1eefd1a/original/Rich-Lamb-Curry-Cut-(Small,-16---20-Pieces)-Hero-Shot_(1).jpg");
+			_item.put("sname","Lamb Curry Cut");
+			_item.put("sdesc","15-22 bone-in & boneless pieces of trimmed lamb..");
+			_item.put("price","₹630");
 			array_map_top_services.add(_item);
 		}
-
-
+		{
+			HashMap<String, Object> _item = new HashMap<>();
+			_item.put("image", "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/54ea3781-7d18-5ee5-fdd9-1a41b34fdd52/original/p2_tile_images_6th_folder-06_(3).jpg");
+			_item.put("sname","Premium Mackerel");
+			_item.put("sdesc","Premium Mackerel (Bangda) Medium - Whole, Cleaned\n" +
+					"Also called Aiyla, Ayila, Ayala, Bangda..");
+			_item.put("price","₹130");
+			array_map_top_services.add(_item);
+		}
+		{
+			HashMap<String, Object> _item = new HashMap<>();
+			_item.put("image", "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/3f2a1744-28d0-534f-dde7-6121d6b033f8/original/p2_tile_images_6th_folder-15.jpg");
+			_item.put("sname","Rohu (Rui/Kannadi Kendai)");
+			_item.put("sdesc","Rohu (Rui/Kannadi Kendai) Medium - Bengali Cut, No Head");
+			_item.put("price","₹230");
+			array_map_top_services.add(_item);
+		}
+		{
+			HashMap<String, Object> _item = new HashMap<>();
+			_item.put("image", "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/a917c576-c350-375a-afad-4882c7fd85a8/original/Classic-Eggs---Pack-of-12-Hero-Shot.jpg");
+			_item.put("sname","Classic Eggs - Pack Of 12");
+			_item.put("sdesc","White shell eggs laid by healthy hens 12 Pieces");
+			_item.put("price","₹130");
+			array_map_top_services.add(_item);
+		}
+		{
+			HashMap<String, Object> _item = new HashMap<>();
+			_item.put("image", "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/5a25a5e9-6463-636b-002f-899fb943fb03/original/Cage-Free-Eggs---Pack-Of-6---pr_mokg6lllq2---Hero-Shot.jpg");
+			_item.put("sname","Cage Free Eggs");
+			_item.put("sdesc","Cage Free Eggs - Pack Of 6");
+			_item.put("price","₹70");
+			array_map_top_services.add(_item);
+		}
+		{
+			HashMap<String, Object> _item = new HashMap<>();
+			_item.put("image", "https://dao54xqhg9jfa.cloudfront.net/ProductMerchantdising/4f003ba8-d470-247b-435d-422a1a57f984/original/1591960259.2414--2020-06-1216_40_59--738.jpeg");
+			_item.put("sname","Freshwater/White Prawns");
+			_item.put("sdesc","Freshwater prawns are mildly sweet and juicy ..");
+			_item.put("price","₹150");
+			array_map_top_services.add(_item);
+		}
+		Collections.shuffle(array_map_top_services);
 		recyclerview1.setAdapter(new Recyclerview1Adapter(array_map_top_services));
 		recyclerview1.setLayoutManager(new LinearLayoutManager(getContext()));
 		recyclerview1.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL, false));
-
+		//Collections.shuffle(array_map_top_services);
 		recyclerview2.setAdapter(new Recyclerview2Adapter(array_map_top_services));
 		recyclerview2.setLayoutManager(new LinearLayoutManager(getContext()));
-		recyclerview2.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL, false));
+		recyclerview2.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL, true));
 
 
 
@@ -467,7 +485,13 @@ menu = _view.findViewById(R.id.menu);
 					@Override
 					public void onClick(View view) {
 						try {
-							SharedPreferences sh = getContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+
+
+						Intent i = new Intent();
+						i.setClass(getContext(), Product_details_activity.class);
+						startActivity(i);
+
+							/*SharedPreferences sh = getContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
 							if(!sh.getString("token", "").equals("")) {
 
 
@@ -494,7 +518,7 @@ menu = _view.findViewById(R.id.menu);
 								startActivity(new Intent(getActivity(), Book_Service_Activity.class));
 
 							}
-
+*/
 						}catch (Exception e){
 						//	SharedPreferences sharedPreferences = getContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
 
@@ -588,7 +612,7 @@ menu = _view.findViewById(R.id.menu);
 		public  Object instantiateItem(ViewGroup _container,  final int _position) {
 			View _view = LayoutInflater.from(_context).inflate(R.layout.custom_slider, _container, false);
 
-			final androidx.cardview.widget.CardView cardview1 = _view.findViewById(R.id.cardview1);
+			final CardView cardview1 = _view.findViewById(R.id.cardview1);
 			final ImageView imageview1 = _view.findViewById(R.id.imageview1);
 
 
@@ -612,6 +636,7 @@ menu = _view.findViewById(R.id.menu);
 			return _view;
 		}
 	}
+
 
 
 

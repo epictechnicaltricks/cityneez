@@ -22,8 +22,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.serviceapp.R;
@@ -48,6 +50,8 @@ public class MyAccount_Fragment extends  Fragment  {
       TextView name, logout, phone, login, login2;
 
 	  LinearLayout bg;
+	CardView cardimg;
+	ImageView imageview;
 
 
 
@@ -57,7 +61,14 @@ public class MyAccount_Fragment extends  Fragment  {
 		View _view = _inflater.inflate(R.layout.frag_my_account, _container, false);
 		initialize(_savedInstanceState, _view);
 		initializeLogic();
+		cardimg = _view.findViewById(R.id.cardimg3);
+		imageview = _view.findViewById(R.id.imageview6);
+		Glide.with(getContext())
+				.load(Uri.parse(Objects.requireNonNull("https://media.tenor.com/X5jRwr6NyRkAAAAC/wink-emoji.gif").toString()))
+				.thumbnail(0.01f)
+				.into(imageview);
 		return _view;
+
 	}
 	
 	private void initialize(Bundle _savedInstanceState, View _view) {
