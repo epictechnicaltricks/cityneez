@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
-    android:orientation="vertical">
+    tools:context=".activity.Login"
+    android:orientation="vertical"
+    android:background="@color/lite_bg_color">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerInside"
-        android:src="@drawable/login" />
+        android:src="@drawable/login1" />
     <LinearLayout
     android:padding="20dp"
     android:layout_width="match_parent"
@@ -29,7 +30,7 @@
             android:layout_marginTop="-10dp"
             android:gravity="center"
             android:text="Log In"
-            android:textColor="#030695"
+            android:textColor="#3579F1"
             android:textSize="33sp"
             android:textStyle="bold" />
 
@@ -44,8 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/baseline_alternate_email_24"
-
-                />
+                app:tint="@color/text_color"/>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -54,14 +54,16 @@
                 android:layout_marginLeft="12dp">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:paddingStart="0dp"
+                    android:paddingStart="6dp"
                     android:paddingEnd="0dp"
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:hint="Enter Email"
                     android:backgroundTint="@color/white"
-                    android:ems="10"/>
+                    android:ems="10"
+                    android:fontFamily="@font/productsans_regular"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -78,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/baseline_lock_24"
                 android:layout_marginTop="22dp"
-                />
+                app:tint="@color/text_color"/>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -89,15 +91,15 @@
                 app:passwordToggleTint="@color/black"
                 android:layout_marginLeft="10dp">
                 <androidx.appcompat.widget.AppCompatEditText
-
-                    android:paddingStart="0dp"
+                    android:paddingStart="6dp"
                     android:paddingEnd="0dp"
                     android:inputType="textPassword"
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Enter Password"
-                    android:backgroundTint="@color/white" />
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/black"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -108,8 +110,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:gravity="end"
+            android:fontFamily="@font/productsans_regular"
             android:text="Forgot Password ?"
-            android:textColor='@color/black'
+            android:textColor='@color/text_color'
             android:textSize="19sp"
             android:layout_margin="10dp"/>
 
@@ -123,6 +126,7 @@
             android:padding="13dp"
             android:layout_margin="10dp"
             android:text="log In"
+            android:fontFamily="@font/productsans_regular"
             android:textSize="15sp"
             app:cornerRadius="10sp" />
         <TextView
@@ -135,8 +139,9 @@
             android:text="Continue as a guest"
             android:textSize="18sp"
             android:layout_gravity="center"
+            android:fontFamily="@font/productsans_regular"
             android:layout_marginTop="15dp"
-            android:textColor="#515151"
+            android:textColor="@color/bg_color"
             android:background="@drawable/guest"
             android:padding="13dp"/>
         <LinearLayout
@@ -153,7 +158,7 @@
                 android:text="New User ?"
                 android:textSize="18sp"
                 android:layout_gravity="center"
-                android:textColor="#515151"
+                android:textColor="@color/text_color"
                 />
             <TextView
                 android:id="@+id/create"
@@ -162,7 +167,7 @@
                 android:layout_height="wrap_content"
                 android:text="Create an Account"
                 android:textSize="18sp"
-                android:textColor="#0E2CD1"
+                android:textColor="#3579F1"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"/>
 

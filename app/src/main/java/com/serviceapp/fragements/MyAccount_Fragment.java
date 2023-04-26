@@ -36,6 +36,7 @@ import com.serviceapp.Util;
 import com.serviceapp.activity.Addressactivity;
 import com.serviceapp.activity.HomeActivity;
 import com.serviceapp.activity.Login;
+import com.serviceapp.new_design.activity.Orders_details;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,7 +51,7 @@ public class MyAccount_Fragment extends  Fragment  {
       TextView name, logout, phone, login, login2;
 
 	  LinearLayout bg;
-	CardView cardimg;
+	CardView cardimg, myorder;
 	ImageView imageview;
 
 
@@ -63,6 +64,15 @@ public class MyAccount_Fragment extends  Fragment  {
 		initializeLogic();
 		cardimg = _view.findViewById(R.id.cardimg3);
 		imageview = _view.findViewById(R.id.imageview6);
+		myorder = _view.findViewById(R.id.my_order);
+
+		myorder.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				startActivity(new Intent(getContext(), Orders_details.class));
+			}
+		});
+
 		Glide.with(getContext())
 				.load(Uri.parse(Objects.requireNonNull("https://media.tenor.com/X5jRwr6NyRkAAAAC/wink-emoji.gif").toString()))
 				.thumbnail(0.01f)

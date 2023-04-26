@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".forgotpasw"
+    android:background="@color/lite_bg_color"
     android:orientation="vertical">
     <ImageView
         android:layout_marginTop="15dp"
@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:text="FORGOT\nPASSWORD ?"
                 android:textSize="30sp"
-                android:textColor="@color/black"
+                android:textColor="@color/text_color"
                 android:textStyle="bold"
                 />
 
@@ -46,16 +46,18 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/baseline_alternate_email_24"
                 android:layout_marginTop="15dp"
-                />
+                app:tint="@color/text_color"/>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="24dp"
-                android:textColor="@color/black">
+                android:layout_marginLeft="10sp">
                 <androidx.appcompat.widget.AppCompatEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Enter Email"
+                    android:fontFamily="@font/productsans_regular"
+                    android:textColor="@color/black"
                     android:backgroundTint="@color/white"
                     android:ems="10"/>
             </com.google.android.material.textfield.TextInputLayout>

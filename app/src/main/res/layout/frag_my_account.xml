@@ -20,7 +20,8 @@
 			android:layout_height="wrap_content"
 			android:orientation="vertical">
 			<LinearLayout
-
+android:gravity="center"
+				android:padding="10dp"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:orientation="horizontal">
@@ -28,14 +29,15 @@
 
 
 					<androidx.cardview.widget.CardView
-						android:elevation="5sp"
+						android:elevation="3sp"
+						
 						android:layout_width="100dp"
 						android:layout_height="100dp"
 						android:id="@+id/cardimg3"
 						app:cardCornerRadius="100dp"
 						app:cardPreventCornerOverlap="false"
 						app:cardElevation="6dp"
-						android:layout_margin="10dp"
+					android:layout_margin="5dp"
 						android:foregroundGravity="center_horizontal">
 						<ImageView
 							android:translationY="10sp"
@@ -48,22 +50,25 @@
 					</androidx.cardview.widget.CardView>
 
 				<LinearLayout
+					android:gravity="center_vertical"
 					android:layout_weight="1"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:orientation="vertical"
 					android:layout_margin="10dp">
 					<TextView
+						android:singleLine="true"
+						android:ellipsize="marquee"
 						android:layout_marginLeft="10dp"
 						android:id="@+id/name"
-						android:layout_marginTop="20dp"
+						android:layout_marginTop="17sp"
 						android:textStyle="bold"
-						android:layout_width="match_parent"
+						android:layout_width="170dp"
 						android:layout_height="wrap_content"
 						android:text="Hello, User"
-						android:textSize="24dp"
+						android:textSize="20sp"
 						android:textColor="@color/text_color"
-	                  android:fontFamily="@font/productsans_regular"/>
+	                  android:fontFamily="@font/dmsansbold"/>
 					<TextView
 						android:alpha="0.6"
 						android:layout_marginLeft="10dp"
@@ -71,21 +76,21 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:text="1234567890"
-						android:textSize="20dp"
+						android:textSize="15dp"
 						android:textColor="@color/text_color"
-	android:fontFamily="@font/productsans_regular"/>
+	android:fontFamily="@font/dmsansregular"/>
 					<TextView
 						android:visibility="gone"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:text="Unit-4,GVIT Techno..."
-						android:textColor="@color/text_color"
-	android:fontFamily="@font/productsans_regular"
+						android:textColor="@color/white"
+	android:fontFamily="@font/dmsansmedium"
 						android:textSize="18dp" />
 				</LinearLayout>
 
 				<ImageView
-					android:layout_marginEnd="20dp"
+					android:layout_marginEnd="17sp"
 					android:id="@+id/edit"
 					android:layout_width="wrap_content"
 					android:layout_height="match_parent"
@@ -109,13 +114,14 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:text="My Booking"
-					android:textColor="@color/text_color"
-	android:fontFamily="@font/productsans_regular"
-					android:textSize="20dp"
+					android:textColor="@color/white"
+	android:fontFamily="@font/dmsansmedium"
+					android:textSize="17sp"
 					android:layout_margin="10dp"/>
 			</LinearLayout>
 			<androidx.cardview.widget.CardView
-				app:cardBackgroundColor="@color/lite_bg_color"
+
+				app:cardBackgroundColor="#3F51B5"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				app:cardCornerRadius="20sp"
@@ -127,30 +133,31 @@
 					android:layout_margin="10sp"
 					android:padding="4dp">
 					<ImageView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:src="@drawable/location1"
+
+						android:layout_width="22dp"
+						android:layout_height="22dp"	android:src="@drawable/location1"
 						android:layout_gravity="center"
-						app:tint="@color/text_color"/>
+						app:tint="@color/white"/>
 					<TextView
 						android:layout_marginLeft="20sp"
 						android:id="@+id/address"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:text="My Address"
-						android:textColor="@color/text_color"
+						android:textColor="@color/white"
 
-						android:fontFamily="@font/productsans_regular"
-						android:textSize="20dp" />
+						android:fontFamily="@font/dmsansmedium"
+						android:textSize="17sp" />
 				</LinearLayout>
 			</androidx.cardview.widget.CardView>
 
 			<androidx.cardview.widget.CardView
+				android:id="@+id/my_order"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				app:cardCornerRadius="20sp"
 				android:layout_margin="10sp"
-				app:cardBackgroundColor="@color/lite_bg_color">
+				app:cardBackgroundColor="#673AB7">
 				<LinearLayout
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
@@ -158,20 +165,20 @@
 					android:layout_margin="10sp"
 					android:padding="4dp">
 					<ImageView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
+						android:layout_width="22dp"
+						android:layout_height="22dp"
 						android:src="@drawable/order"
 						android:layout_gravity="center"
-						app:tint="@color/text_color"/>
+						app:tint="@color/white"/>
 					<TextView
 						android:layout_marginLeft="20sp"
 						android:id="@+id/order"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
-						android:text="My Order"
-						android:textColor="@color/text_color"
-						android:fontFamily="@font/productsans_regular"
-						android:textSize="20dp" />
+						android:text="My Orders"
+						android:textColor="@color/white"
+						android:fontFamily="@font/dmsansmedium"
+						android:textSize="17sp" />
 				</LinearLayout>
 			</androidx.cardview.widget.CardView>
 			<androidx.cardview.widget.CardView
@@ -179,7 +186,7 @@
 				android:layout_height="wrap_content"
 				app:cardCornerRadius="20sp"
 				android:layout_margin="10sp"
-				app:cardBackgroundColor="@color/lite_bg_color">
+				app:cardBackgroundColor="#9C27B0">
 				<LinearLayout
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
@@ -187,20 +194,20 @@
 					android:layout_margin="10sp"
 					android:padding="4dp">
 					<ImageView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:src="@drawable/service1"
+						android:layout_width="22dp"
+						android:layout_height="22dp"	android:src="@drawable/service1"
+
 						android:layout_gravity="center"
-						app:tint="@color/text_color"/>
+						app:tint="@color/white"/>
 					<TextView
 						android:layout_marginLeft="20sp"
 						android:id="@+id/service"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
-						android:text="My Service"
-						android:textColor="@color/text_color"
-						android:fontFamily="@font/productsans_regular"
-						android:textSize="20dp" />
+						android:text="My Services"
+						android:textColor="@color/white"
+						android:fontFamily="@font/dmsansmedium"
+						android:textSize="17sp" />
 				</LinearLayout>
 			</androidx.cardview.widget.CardView>
 
@@ -209,27 +216,26 @@
 				android:layout_height="wrap_content"
 				app:cardCornerRadius="20sp"
 				android:layout_margin="10sp"
-				app:cardBackgroundColor="@color/lite_bg_color">
+				app:cardBackgroundColor="#E91E63">
 			<LinearLayout
-				android:padding="8dp"
+				android:padding="5dp"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:orientation="horizontal"
-				android:layout_marginTop="2dp">
+				android:layout_margin="5sp">
 				<ImageView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:src="@drawable/star"
+					android:layout_width="22dp"
+					android:layout_height="22dp"		android:src="@drawable/star"
 					android:layout_gravity="center"
-					app:tint="@color/text_color"/>
+					app:tint="@color/white"/>
 				<TextView
 					android:id="@+id/ratings"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:text="My Rating"
-					android:textColor="@color/text_color"
-					android:fontFamily="@font/productsans_regular"
-					android:textSize="20dp"
+					android:textColor="@color/white"
+					android:fontFamily="@font/dmsansmedium"
+					android:textSize="17sp"
 					android:layout_marginLeft="20sp" />
 			</LinearLayout>
 			</androidx.cardview.widget.CardView>
@@ -239,28 +245,27 @@
 				android:layout_height="wrap_content"
 				app:cardCornerRadius="20sp"
 				android:layout_margin="10sp"
-				app:cardBackgroundColor="@color/lite_bg_color">
+				app:cardBackgroundColor="#F44336">
 			<LinearLayout
-				android:padding="4dp"
+				android:padding="5dp"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:orientation="horizontal"
-				android:layout_marginTop="2dp"
+				android:layout_margin="5dp"
 				>
 				<ImageView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:src="@drawable/suport"
+					android:layout_width="22dp"
+					android:layout_height="22dp"			android:src="@drawable/suport"
 					android:layout_gravity="center"
-					app:tint="@color/text_color"/>
+					app:tint="@color/white"/>
 				<TextView
 					android:id="@+id/support"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:text="Help &amp; Support"
-					android:textColor="@color/text_color"
-					android:fontFamily="@font/productsans_regular"
-					android:textSize="20dp"
+					android:textColor="@color/white"
+					android:fontFamily="@font/dmsansmedium"
+					android:textSize="17sp"
 					android:layout_marginLeft="20sp"/>
 			</LinearLayout>
 			</androidx.cardview.widget.CardView>
@@ -271,11 +276,11 @@
 				android:orientation="horizontal"
 				android:layout_marginTop="2dp">
 				<TextView
-					android:fontFamily="@font/productsans_regular"
+					android:fontFamily="@font/dmsansregular"
 					android:id="@+id/logout"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:textSize="24dp"
+					android:textSize="20dp"
 
 					android:layout_marginTop="112dp"
 					android:textColor="#F30707"
@@ -312,7 +317,7 @@
 					android:gravity="right"/>
 
 				<TextView
-					android:fontFamily="@font/productsans_regular"
+					android:fontFamily="@font/dmsansmedium"
 					android:id="@+id/login_2"
 					android:layout_weight="1"
 					android:layout_width="wrap_content"
@@ -320,7 +325,7 @@
 					android:textSize="24dp"
 				
 					android:layout_marginTop="112dp"
-					android:textColor="@color/text_color"
+					android:textColor="@color/white"
 					android:text="to access"
 					android:gravity="left"/>
 

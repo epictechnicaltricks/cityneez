@@ -17,19 +17,23 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".new_design.activity.View_all_products"
+            android:exported="false" />
+        <activity
+            android:name=".new_design.activity.CouponActivity"
+            android:exported="false" />
+        <activity
             android:name=".new_design.activity.LayoutActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
         <activity
             android:name=".coinsystem.CoinActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".activity.Signup"
             android:exported="true" />
@@ -44,40 +48,43 @@
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".activity.Addressactivity"
             android:exported="false" />
         <activity
             android:name=".activity.Book_Service_Activity"
             android:exported="false" />
+        <activity
+            android:name=".chicken_order_App.Order_chicken"
+            android:exported="true" />
+        <activity
+            android:name=".new_design.activity.Show_fragment"
+            android:exported="false" />
+        <activity
+            android:name=".new_design.activity.Product_details_activity"
+            android:exported="false" />
+        <activity
+            android:name=".new_design.activity.Cart_activity"
+            android:exported="false" />
+        <activity
+            android:name=".new_design.activity.Checkout_activity"
+            android:exported="false" />
+        <activity
+            android:name=".new_design.activity.Orders_details"
+            android:exported="false" />
+        <activity
+            android:name=".new_design.activity.Search_activity"
+            android:exported="false" />
 
-        <activity android:name=".chicken_order_App.Order_chicken"
-            android:exported="true">
 
-        </activity>
+        <activity
+            android:name=".new_design.activity.Notification"
+            android:exported="false" />
 
-        <activity android:name=".new_design.activity.Show_fragment"
-            android:exported="false">
-
-        </activity>
-
-
-        <activity android:name=".new_design.activity.Product_details_activity"
-            android:exported="false">
-
-        </activity>
-
-        <activity android:name=".new_design.activity.Cart_activity"
-            android:exported="false">
-
-        </activity>
-
-
-        <activity android:name=".new_design.activity.Checkout_activity"
-            android:exported="false">
-
-        </activity>
+        <activity
+            android:name=".new_design.activity.Thank_activity"
+            android:exported="false" />
 
 
     </application>

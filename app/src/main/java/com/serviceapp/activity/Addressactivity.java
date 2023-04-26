@@ -24,6 +24,7 @@ import com.serviceapp.RadialProgressView;
 import com.serviceapp.RequestNetwork;
 import com.serviceapp.RequestNetworkController;
 import com.serviceapp.Util;
+import com.serviceapp.new_design.activity.LayoutActivity;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -135,7 +136,9 @@ public class Addressactivity extends AppCompatActivity {
 
                     Util.showMessage(getApplicationContext(),"Updated.");
                     finish();
-                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                   // startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+
+                    startActivity(new Intent(getApplicationContext(), LayoutActivity.class));
 
 
                 }else {

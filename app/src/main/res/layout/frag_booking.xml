@@ -22,7 +22,7 @@ android:background="@color/bg_color"
 			android:layout_marginLeft="15dp"
 			android:layout_marginTop="15dp"
 			android:padding="8dp"
-			android:text="My Bookings"
+			android:text="My Services"
 			android:textSize="25sp"
 
 		/>
@@ -77,13 +77,14 @@ android:id="@+id/login_bg"
 
 	<androidx.recyclerview.widget.RecyclerView
 	android:visibility="gone"
+		android:paddingBottom="50dp"
 		android:id="@+id/recyclerview1"
 		android:layout_gravity="center"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_marginTop="0dp"
-		android:layout_marginBottom="0dp"
-		android:padding="0dp"/>
+
+		/>
 
 	<LinearLayout
 		android:gravity="center"

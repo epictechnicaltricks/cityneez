@@ -28,8 +28,12 @@ import com.serviceapp.Util;
 import com.serviceapp.activity.Addressactivity;
 import com.serviceapp.activity.Book_Service_Activity;
 
+import com.serviceapp.new_design.activity.CouponActivity;
 import com.serviceapp.new_design.activity.LayoutActivity;
+import com.serviceapp.new_design.activity.Notification;
+import com.serviceapp.new_design.activity.Search_activity;
 import com.serviceapp.new_design.activity.Show_fragment;
+import com.serviceapp.new_design.activity.View_all_products;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -65,6 +69,14 @@ public class New_Home_Frag extends  Fragment  {
 
 	ImageView menu;
 
+	TextView view_all, view_all2;
+
+	ImageView cart2;
+
+	LinearLayout noti, search;
+
+
+
 
 @NonNull
 	@Override
@@ -74,6 +86,55 @@ public class New_Home_Frag extends  Fragment  {
 		initializeLogic();
 		chicken  = _view.findViewById(R.id.chicken);
 		foodie = _view.findViewById(R.id.foodie);
+
+		view_all = _view.findViewById(R.id.view_all);
+	    view_all2 = _view.findViewById(R.id.view_all2);
+
+		cart2 = _view.findViewById(R.id.cart);
+
+		noti= _view.findViewById(R.id.noti);
+
+	   search= _view.findViewById(R.id.s3);
+
+	   
+	   search.setOnClickListener(new View.OnClickListener() {
+		   @Override
+		   public void onClick(View view) {
+			   startActivity(new Intent(getContext(), Search_activity.class));
+		   }
+	   });
+		noti.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				startActivity(new Intent(getContext(), Notification.class));
+			}
+		});
+
+		cart2.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				startActivity(new Intent(getContext(), CouponActivity.class));
+			}
+		});
+
+		view_all.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+
+				startActivity(new Intent(getContext(), View_all_products.class));
+
+			}
+		});
+
+	view_all2.setOnClickListener(new View.OnClickListener() {
+		@Override
+		public void onClick(View view) {
+
+			startActivity(new Intent(getContext(), View_all_products.class));
+
+		}
+	});
+
 		chicken.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
