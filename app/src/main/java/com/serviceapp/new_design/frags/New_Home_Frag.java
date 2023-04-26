@@ -106,7 +106,7 @@ public class New_Home_Frag extends  Fragment  {
 		noti.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				startActivity(new Intent(getContext(), Notification.class));
+			Util.showMessage(getContext(), "Under development");
 			}
 		});
 

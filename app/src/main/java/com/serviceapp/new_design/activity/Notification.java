@@ -52,80 +52,54 @@ public class Notification extends AppCompatActivity {
 
     public void category_data()
     {
-        {
-            HashMap<String, Object> _item = new HashMap<>();
-            _item.put("image", "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/4cad2ee9-9257-9109-62a1-da4082b2cf36/original/sho.jpg");
-            _item.put("sname","Chicken Curry Cut");
-            _item.put("sdesc","The ideal pack for a big, delicious curry feast.");
-            _item.put("price","₹230");
-            array_map_top_services.add(_item);
-        }
 
-        {
-            HashMap<String, Object> _item = new HashMap<>();
-            _item.put("image", "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/cbede953-c94c-3c48-a9a2-bad815fa1c3a/original/ChickenLegCurryCutpiecesHeroShot.jpg");
-            _item.put("sname","Chicken Leg Curry Cut");
-            _item.put("sdesc","Juicy bone-in leg pieces for delicious Curries or Biryanis.");
-            _item.put("price","₹250");
-            array_map_top_services.add(_item);
-        }
-
-        {
-            HashMap<String, Object> _item = new HashMap<>();
-            _item.put("image", "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/9e8eaa76-7195-009a-7094-05b50bf1d41e/original/Goat-Boneless-Hero-Shot.jpg");
-            _item.put("sname","Goat Boneless");
-            _item.put("sdesc","25-34 pieces of cleaned, boneless Goat..");
-            _item.put("price","₹600");
-            array_map_top_services.add(_item);
-        }
 
         {
             HashMap<String, Object> _item = new HashMap<>();
             _item.put("image", "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/ba21abee-4250-e9b5-0c64-05d9c1eefd1a/original/Rich-Lamb-Curry-Cut-(Small,-16---20-Pieces)-Hero-Shot_(1).jpg");
-            _item.put("sname","Lamb Curry Cut");
-            _item.put("sdesc","15-22 bone-in & boneless pieces of trimmed lamb..");
-            _item.put("price","₹630");
+            _item.put("sname","On the Way");
+            _item.put("sdesc","Your payment has been received and processed.");
+            _item.put("price","02:03 PM, January 2nd 2023");
             array_map_top_services.add(_item);
         }
         {
             HashMap<String, Object> _item = new HashMap<>();
             _item.put("image", "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/54ea3781-7d18-5ee5-fdd9-1a41b34fdd52/original/p2_tile_images_6th_folder-06_(3).jpg");
-            _item.put("sname","Premium Mackerel");
-            _item.put("sdesc","Premium Mackerel (Bangda) Medium - Whole, Cleaned\n" +
-                    "Also called Aiyla, Ayila, Ayala, Bangda..");
-            _item.put("price","₹130");
+            _item.put("sname","Order Delivered");
+            _item.put("sdesc","Your account balance is below the minimum threshold.");
+            _item.put("price","05:26 AM, August 19th 2023");
             array_map_top_services.add(_item);
         }
         {
             HashMap<String, Object> _item = new HashMap<>();
             _item.put("image", "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/3f2a1744-28d0-534f-dde7-6121d6b033f8/original/p2_tile_images_6th_folder-15.jpg");
-            _item.put("sname","Rohu (Rui/Kannadi Kendai)");
-            _item.put("sdesc","Rohu (Rui/Kannadi Kendai) Medium - Bengali Cut, No Head");
-            _item.put("price","₹230");
+            _item.put("sname","Password Changed ");
+            _item.put("sdesc","Your password has been changed successfully.");
+            _item.put("price","03:10 AM, November 17th 2023");
             array_map_top_services.add(_item);
         }
         {
             HashMap<String, Object> _item = new HashMap<>();
             _item.put("image", "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/a917c576-c350-375a-afad-4882c7fd85a8/original/Classic-Eggs---Pack-of-12-Hero-Shot.jpg");
-            _item.put("sname","Classic Eggs - Pack Of 12");
-            _item.put("sdesc","White shell eggs laid by healthy hens 12 Pieces");
-            _item.put("price","₹130");
+            _item.put("sname","Flight Delay");
+            _item.put("sdesc","Your flight has been delayed by 2 hours.");
+            _item.put("price","11:47 AM, April 28th 2023");
             array_map_top_services.add(_item);
         }
         {
             HashMap<String, Object> _item = new HashMap<>();
             _item.put("image", "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/5a25a5e9-6463-636b-002f-899fb943fb03/original/Cage-Free-Eggs---Pack-Of-6---pr_mokg6lllq2---Hero-Shot.jpg");
-            _item.put("sname","Cage Free Eggs");
-            _item.put("sdesc","Cage Free Eggs - Pack Of 6");
-            _item.put("price","₹70");
+            _item.put("sname","Assignment Submission");
+            _item.put("sdesc","Don't forget to submit your assignment by midnight.");
+            _item.put("price","09:54 PM, February 5th 2023");
             array_map_top_services.add(_item);
         }
         {
             HashMap<String, Object> _item = new HashMap<>();
             _item.put("image", "https://dao54xqhg9jfa.cloudfront.net/ProductMerchantdising/4f003ba8-d470-247b-435d-422a1a57f984/original/1591960259.2414--2020-06-1216_40_59--738.jpeg");
-            _item.put("sname","Freshwater/White Prawns");
-            _item.put("sdesc","Freshwater prawns are mildly sweet and juicy ..");
-            _item.put("price","₹150");
+            _item.put("sname","Package Delivered ");
+            _item.put("sdesc","Your package has been delivered successfully.");
+            _item.put("price","03:21 PM, June 15th 2023");
             array_map_top_services.add(_item);
         }
 
@@ -161,17 +135,10 @@ public class Notification extends AppCompatActivity {
             View _view = _holder.itemView;
 
             final CardView card = _view.findViewById(R.id.card);
-            final TextView service_name = _view.findViewById(R.id.name);
-            //	final TextView service_desc = _view.findViewById(R.id.desc);
-            final TextView price = _view.findViewById(R.id.price);
-            final ImageView img = _view.findViewById(R.id.img);
+            final TextView name = _view.findViewById(R.id.name);
+            final TextView desc = _view.findViewById(R.id.desc);
+            final TextView time = _view.findViewById(R.id.time);
 
-
-
-            final CardView plus =findViewById(R.id.plus);
-            final CardView minus = findViewById(R.id.minus);
-
-            final TextView  qty = findViewById(R.id.qty);
 
             try{
 
@@ -180,18 +147,17 @@ public class Notification extends AppCompatActivity {
 
 
 
-                service_name.setText(Objects.requireNonNull(array_map_top_services.get(_position).get("sname")).toString());
+                name.setText(Objects.requireNonNull(array_map_top_services.get(_position).get("sname")).toString());
+                desc.setText(Objects.requireNonNull(array_map_top_services.get(_position).get("sdesc")).toString());
 
-                //service_desc.setText(Objects.requireNonNull(array_map_top_services.get(_position).get("desc")).toString());
-
-                price.setText(Objects.requireNonNull(array_map_top_services.get(_position).get("price")).toString());
-
+                time.setText(Objects.requireNonNull(array_map_top_services.get(_position).get("price")).toString());
+/*
                 String img_url = Objects.requireNonNull(array_map_top_services.get(_position).get("image")).toString();
 
                 Glide.with(getApplicationContext())
                         .load(Uri.parse(img_url))
                         .thumbnail(0.01f)
-                        .into(img);
+                        .into(img);*/
 
          /*       plus.setOnClickListener(new View.OnClickListener() {
                     @Override

@@ -207,7 +207,7 @@ public class Addressactivity extends AppCompatActivity {
 
                     } else {
 
-                       startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                       startActivity(new Intent(getApplicationContext(), LayoutActivity.class));
                        finish();
 
                     }

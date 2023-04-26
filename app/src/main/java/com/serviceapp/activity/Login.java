@@ -25,6 +25,7 @@ import com.serviceapp.RadialProgressView;
 import com.serviceapp.RequestNetwork;
 import com.serviceapp.RequestNetworkController;
 import com.serviceapp.Util;
+import com.serviceapp.new_design.activity.LayoutActivity;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -120,7 +121,8 @@ try {
     public void continue_as_guest(View view) {
 
         Intent i = new Intent();
-        i.setClass(getApplicationContext(), HomeActivity.class);
+  //      i.setClass(getApplicationContext(), HomeActivity.class);
+        i.setClass(getApplicationContext(), LayoutActivity.class);
         startActivity(i);
         finish();
     }

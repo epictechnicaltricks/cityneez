@@ -36,6 +36,7 @@ import com.serviceapp.Util;
 import com.serviceapp.activity.Addressactivity;
 import com.serviceapp.activity.HomeActivity;
 import com.serviceapp.activity.Login;
+import com.serviceapp.new_design.activity.Notification;
 import com.serviceapp.new_design.activity.Orders_details;
 
 import java.util.ArrayList;
@@ -51,7 +52,7 @@ public class MyAccount_Fragment extends  Fragment  {
       TextView name, logout, phone, login, login2;
 
 	  LinearLayout bg;
-	CardView cardimg, myorder;
+	CardView cardimg, myorder, notifi;
 	ImageView imageview;
 
 
@@ -65,6 +66,15 @@ public class MyAccount_Fragment extends  Fragment  {
 		cardimg = _view.findViewById(R.id.cardimg3);
 		imageview = _view.findViewById(R.id.imageview6);
 		myorder = _view.findViewById(R.id.my_order);
+
+		notifi = _view.findViewById(R.id.notification);
+
+		notifi.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				startActivity(new Intent(getContext(), Notification.class));
+			}
+		});
 
 		myorder.setOnClickListener(new View.OnClickListener() {
 			@Override

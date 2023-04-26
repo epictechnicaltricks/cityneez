@@ -382,7 +382,8 @@ public class New_Category_Frag extends  Fragment  {
 		@NonNull
 		@Override
 		public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-			LayoutInflater _inflater = (LayoutInflater) requireContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);		View _v = _inflater.inflate(R.layout.top_service_custom, null);
+			LayoutInflater _inflater = (LayoutInflater) requireContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			View _v = _inflater.inflate(R.layout.custom_catagory, null);
 			RecyclerView.LayoutParams _lp = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 			_v.setLayoutParams(_lp);
 			return new ViewHolder(_v);
@@ -395,7 +396,7 @@ public class New_Category_Frag extends  Fragment  {
 			final CardView card = _view.findViewById(R.id.card);
 			final TextView service_name = _view.findViewById(R.id.name);
 			//	final TextView service_desc = _view.findViewById(R.id.desc);
-			final TextView price = _view.findViewById(R.id.price);
+
 			final ImageView img = _view.findViewById(R.id.img);
 
 
@@ -403,12 +404,12 @@ public class New_Category_Frag extends  Fragment  {
 			try{
 
 
-price.setVisibility(View.GONE);
+//price.setVisibility(View.GONE);
 				service_name.setText(Objects.requireNonNull(array_map_top_services.get(_position).get("sname")).toString());
 
 				//service_desc.setText(Objects.requireNonNull(array_map_top_services.get(_position).get("desc")).toString());
 
-				price.setText(Objects.requireNonNull(array_map_top_services.get(_position).get("price")).toString());
+				//price.setText(Objects.requireNonNull(array_map_top_services.get(_position).get("price")).toString());
 
 				String img_url = Objects.requireNonNull(array_map_top_services.get(_position).get("image")).toString();
 				Glide.with(getActivity())
@@ -511,7 +512,7 @@ price.setVisibility(View.GONE);
 		@Override
 		public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 			LayoutInflater _inflater = (LayoutInflater) requireContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			View _v = _inflater.inflate(R.layout.top_service_custom, null);
+			View _v = _inflater.inflate(R.layout.custom_catagory, null);
 			RecyclerView.LayoutParams _lp = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 			_v.setLayoutParams(_lp);
 			return new ViewHolder(_v);
@@ -524,7 +525,7 @@ price.setVisibility(View.GONE);
 			final CardView card = _view.findViewById(R.id.card);
 			final TextView service_name = _view.findViewById(R.id.name);
 			//	final TextView service_desc = _view.findViewById(R.id.desc);
-			final TextView price = _view.findViewById(R.id.price);
+
 			final ImageView img = _view.findViewById(R.id.img);
 
 
@@ -532,12 +533,12 @@ price.setVisibility(View.GONE);
 			try{
 
 
-				price.setVisibility(View.GONE);
+				//price.setVisibility(View.GONE);
 				service_name.setText(Objects.requireNonNull(array_map_top_services2.get(_position).get("sname")).toString());
 
 				//service_desc.setText(Objects.requireNonNull(array_map_top_services.get(_position).get("desc")).toString());
 
-				price.setText(Objects.requireNonNull(array_map_top_services2.get(_position).get("price")).toString());
+				//price.setText(Objects.requireNonNull(array_map_top_services2.get(_position).get("price")).toString());
 
 				String img_url = Objects.requireNonNull(array_map_top_services2.get(_position).get("image")).toString();
 				Glide.with(getActivity())
@@ -646,7 +647,8 @@ price.setVisibility(View.GONE);
 		@NonNull
 		@Override
 		public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-			LayoutInflater _inflater = (LayoutInflater) requireContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);		View _v = _inflater.inflate(R.layout.top_service_custom, null);
+			LayoutInflater _inflater = (LayoutInflater) requireContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			View _v = _inflater.inflate(R.layout.custom_catagory, null);
 			RecyclerView.LayoutParams _lp = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 			_v.setLayoutParams(_lp);
 			return new ViewHolder(_v);
@@ -659,7 +661,7 @@ price.setVisibility(View.GONE);
 			final CardView card = _view.findViewById(R.id.card);
 			final TextView service_name = _view.findViewById(R.id.name);
 			//	final TextView service_desc = _view.findViewById(R.id.desc);
-			final TextView price = _view.findViewById(R.id.price);
+
 			final ImageView img = _view.findViewById(R.id.img);
 
 
@@ -667,12 +669,12 @@ price.setVisibility(View.GONE);
 			try{
 
 
-				price.setVisibility(View.GONE);
+
 				service_name.setText(Objects.requireNonNull(array_map_top_services3.get(_position).get("sname")).toString());
 
 				//service_desc.setText(Objects.requireNonNull(array_map_top_services.get(_position).get("desc")).toString());
 
-				price.setText(Objects.requireNonNull(array_map_top_services3.get(_position).get("price")).toString());
+				//price.setText(Objects.requireNonNull(array_map_top_services3.get(_position).get("price")).toString());
 
 				String img_url = Objects.requireNonNull(array_map_top_services3.get(_position).get("image")).toString();
 				Glide.with(getActivity())

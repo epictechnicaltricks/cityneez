@@ -24,6 +24,7 @@
     android:orientation="vertical">
 
         <TextView
+            android:fontFamily="@font/productsans_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -54,6 +55,7 @@
                 android:layout_marginLeft="12dp">
 
                 <androidx.appcompat.widget.AppCompatEditText
+
                     android:paddingStart="6dp"
                     android:paddingEnd="0dp"
                     android:id="@+id/email"
@@ -111,7 +113,7 @@
             android:layout_marginStart="10dp"
             android:gravity="end"
             android:fontFamily="@font/productsans_regular"
-            android:text="Forgot Password ?"
+            android:text="Forgot password?"
             android:textColor='@color/text_color'
             android:textSize="19sp"
             android:layout_margin="10dp"/>
@@ -126,7 +128,7 @@
             android:padding="13dp"
             android:layout_margin="10dp"
             android:text="log In"
-            android:fontFamily="@font/productsans_regular"
+            android:fontFamily="@font/dmsansmedium"
             android:textSize="15sp"
             app:cornerRadius="10sp" />
         <TextView
@@ -139,9 +141,9 @@
             android:text="Continue as a guest"
             android:textSize="18sp"
             android:layout_gravity="center"
-            android:fontFamily="@font/productsans_regular"
+            android:fontFamily="@font/dmsansmedium"
             android:layout_marginTop="15dp"
-            android:textColor="@color/bg_color"
+            android:textColor="#fff"
             android:background="@drawable/guest"
             android:padding="13dp"/>
         <LinearLayout
@@ -152,6 +154,7 @@
             android:layout_gravity="center"
             android:gravity="center">
             <TextView
+                android:fontFamily="@font/dmsansregular"
                 android:gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -161,6 +164,7 @@
                 android:textColor="@color/text_color"
                 />
             <TextView
+                android:fontFamily="@font/dmsansmedium"
                 android:id="@+id/create"
                 android:gravity="center"
                 android:layout_width="wrap_content"

@@ -135,7 +135,8 @@ android:gravity="center"
 					<ImageView
 
 						android:layout_width="22dp"
-						android:layout_height="22dp"	android:src="@drawable/location1"
+						android:layout_height="22dp"
+						android:src="@drawable/baseline_location_on_24"
 						android:layout_gravity="center"
 						app:tint="@color/white"/>
 					<TextView
@@ -167,7 +168,7 @@ android:gravity="center"
 					<ImageView
 						android:layout_width="22dp"
 						android:layout_height="22dp"
-						android:src="@drawable/order"
+						android:src="@drawable/baseline_shopping_cart_24"
 						android:layout_gravity="center"
 						app:tint="@color/white"/>
 					<TextView
@@ -195,7 +196,8 @@ android:gravity="center"
 					android:padding="4dp">
 					<ImageView
 						android:layout_width="22dp"
-						android:layout_height="22dp"	android:src="@drawable/service1"
+						android:layout_height="22dp"
+						android:src="@drawable/baseline_cleaning_services_24"
 
 						android:layout_gravity="center"
 						app:tint="@color/white"/>
@@ -212,6 +214,7 @@ android:gravity="center"
 			</androidx.cardview.widget.CardView>
 
 			<androidx.cardview.widget.CardView
+				android:id="@+id/notification"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				app:cardCornerRadius="20sp"
@@ -225,20 +228,24 @@ android:gravity="center"
 				android:layout_margin="5sp">
 				<ImageView
 					android:layout_width="22dp"
-					android:layout_height="22dp"		android:src="@drawable/star"
+					android:layout_height="22dp"
+					android:src="@drawable/baseline_notifications_24"
 					android:layout_gravity="center"
 					app:tint="@color/white"/>
 				<TextView
 					android:id="@+id/ratings"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:text="My Rating"
+					android:text="My Notifications"
 					android:textColor="@color/white"
 					android:fontFamily="@font/dmsansmedium"
 					android:textSize="17sp"
 					android:layout_marginLeft="20sp" />
 			</LinearLayout>
 			</androidx.cardview.widget.CardView>
+
+
+
 
 			<androidx.cardview.widget.CardView
 				android:layout_width="match_parent"
@@ -255,7 +262,8 @@ android:gravity="center"
 				>
 				<ImageView
 					android:layout_width="22dp"
-					android:layout_height="22dp"			android:src="@drawable/suport"
+					android:layout_height="22dp"
+					android:src="@drawable/baseline_contact_support_24"
 					android:layout_gravity="center"
 					app:tint="@color/white"/>
 				<TextView
@@ -325,7 +333,7 @@ android:gravity="center"
 					android:textSize="24dp"
 				
 					android:layout_marginTop="112dp"
-					android:textColor="@color/white"
+					android:textColor="@color/text_color"
 					android:text="to access"
 					android:gravity="left"/>
 

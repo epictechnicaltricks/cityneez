@@ -30,6 +30,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".coinsystem.CoinActivity"
@@ -80,7 +81,10 @@
 
         <activity
             android:name=".new_design.activity.Notification"
-            android:exported="false" />
+            android:exported="true">
+
+
+        </activity>
 
         <activity
             android:name=".new_design.activity.Thank_activity"

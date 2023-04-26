@@ -237,7 +237,7 @@
             android:background="#fc8080"
             app:cardCornerRadius="20sp">
          <LinearLayout
-             android:onClick=""
+             android:onClick="thankyouu"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:orientation="horizontal"
