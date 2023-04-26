@@ -25,6 +25,7 @@ import com.google.android.material.button.MaterialButton;
 import com.serviceapp.R;
 import com.serviceapp.activity.Addressactivity;
 import com.serviceapp.activity.Book_Service_Activity;
+import com.serviceapp.chicken_order_App.Order_chicken;
 import com.serviceapp.new_design.activity.LayoutActivity;
 import com.serviceapp.new_design.activity.Product_details_activity;
 
@@ -366,9 +367,8 @@ menu = _view.findViewById(R.id.menu);
 						try {
 
 
-							Intent i = new Intent();
-							i.setClass(getContext(), Product_details_activity.class);
-							startActivity(i);
+							startActivity(new Intent(getContext(), Order_chicken.class));
+
 
 						/*	SharedPreferences sh = getContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
 							if(!sh.getString("token", "").equals("")) {

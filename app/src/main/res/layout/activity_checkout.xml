@@ -64,34 +64,26 @@
             android:layout_margin="10sp"/>
 
            <RadioGroup
+               android:padding="5dp"
                android:layout_width="match_parent"
                android:layout_height="wrap_content">
-               <androidx.cardview.widget.CardView
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:layout_margin="13sp"
-                   android:layout_weight="1"
-                   app:cardCornerRadius="20sp"
-                   android:elevation="10sp">
+
                <RadioButton
-                   android:background="@color/lite_bg_color"
+
+                   android:background="@drawable/background2"
                    android:text="   Paytm"
+                   android:layout_marginTop="10dp"
                    android:fontFamily="@font/productsans_regular"
                    android:textSize="20sp"
                    android:textColor="@color/text_color"
                    android:layout_width="match_parent"
                    android:buttonTint="@color/bottom_nav_color"
                    android:layout_height="wrap_content" />
-               </androidx.cardview.widget.CardView>
-               <androidx.cardview.widget.CardView
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:layout_margin="13sp"
-                   android:layout_weight="1"
-                   app:cardCornerRadius="20sp"
-                   android:elevation="10sp">
+
+
                    <RadioButton
-                       android:background="@color/lite_bg_color"
+                       android:layout_marginTop="10dp"
+                       android:background="@drawable/background2"
                        android:text="   Phone pe"
                        android:fontFamily="@font/productsans_regular"
                        android:textSize="20sp"
@@ -99,16 +91,10 @@
                        android:layout_width="match_parent"
                        android:buttonTint="@color/bottom_nav_color"
                        android:layout_height="wrap_content" />
-               </androidx.cardview.widget.CardView>
-               <androidx.cardview.widget.CardView
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:layout_margin="13sp"
-                   android:layout_weight="1"
-                   app:cardCornerRadius="20sp"
-                   android:elevation="10sp">
+
                    <RadioButton
-                       android:background="@color/lite_bg_color"
+                       android:layout_marginTop="10dp"
+                       android:background="@drawable/background2"
                        android:text="   Cash On Delivery"
                        android:fontFamily="@font/productsans_regular"
                        android:textSize="20sp"
@@ -116,7 +102,7 @@
                        android:layout_width="match_parent"
                        android:buttonTint="@color/bottom_nav_color"
                        android:layout_height="wrap_content" />
-               </androidx.cardview.widget.CardView>
+
 
 
            </RadioGroup>

@@ -31,6 +31,7 @@ import com.serviceapp.activity.Book_Service_Activity;
 import com.serviceapp.new_design.activity.CouponActivity;
 import com.serviceapp.new_design.activity.LayoutActivity;
 import com.serviceapp.new_design.activity.Notification;
+import com.serviceapp.new_design.activity.Product_details_activity;
 import com.serviceapp.new_design.activity.Search_activity;
 import com.serviceapp.new_design.activity.Show_fragment;
 import com.serviceapp.new_design.activity.View_all_products;
@@ -527,7 +528,13 @@ menu = _view.findViewById(R.id.menu);
 				card.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
-						try {
+
+						Intent i = new Intent();
+						i.setClass(getContext(), Product_details_activity.class);
+						startActivity(i);
+
+
+					/*	try {
 							SharedPreferences sh = getContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
 							if(!sh.getString("token", "").equals("")) {
 
@@ -560,7 +567,7 @@ menu = _view.findViewById(R.id.menu);
 						//	SharedPreferences sharedPreferences = getContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
 
 
-				}
+				}*/
 					}
 				});
 
