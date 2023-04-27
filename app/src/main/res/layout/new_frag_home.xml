@@ -149,7 +149,7 @@
 							android:layout_marginTop="6dp"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
-							android:text="Raw Chicken"
+							android:text="Foody"
 							android:textColor="@color/text_color"
 							android:fontFamily="@font/productsans_regular"
 							android:layout_gravity="center"/>
@@ -167,7 +167,6 @@
 							android:layout_width="60dp"
 							android:layout_height="60dp"
 							android:elevation="3dp"
-
 							android:id="@+id/view3"
 							app:cardCornerRadius="100dp">
 							<ImageView
@@ -184,7 +183,7 @@
 							android:layout_marginTop="5dp"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
-							android:text="Foody"
+							android:text="Khana Khajana"
 							android:textColor="@color/text_color"
 							android:fontFamily="@font/productsans_regular"
 							android:layout_gravity="center"/>
