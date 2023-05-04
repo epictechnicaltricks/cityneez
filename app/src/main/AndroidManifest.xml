@@ -9,7 +9,7 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/logo2"
+        android:icon="@drawable/logo_cityneeds"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
@@ -25,11 +25,10 @@
         <activity
             android:name=".new_design.activity.LayoutActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+
+
 
         </activity>
         <activity
@@ -49,13 +48,26 @@
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
-            android:exported="true" />
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+
+
+        </activity>
         <activity
             android:name=".activity.Addressactivity"
             android:exported="false" />
         <activity
             android:name=".activity.Book_Service_Activity"
-            android:exported="false" />
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".chicken_order_App.Order_chicken"
             android:exported="true" />
@@ -90,6 +102,12 @@
             android:name=".new_design.activity.Thank_activity"
             android:exported="false" />
 
+        <activity
+            android:name=".new_design.activity.MainActivityhome"
+            android:exported="true">
+
+
+        </activity>
 
     </application>
 

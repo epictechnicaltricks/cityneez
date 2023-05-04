@@ -183,7 +183,7 @@ public class Addressactivity extends AppCompatActivity {
 
                         //Toast.makeText(Addressactivity.this, "this is call 2", Toast.LENGTH_SHORT).show();
 
-                           myEdit.putString("customer_name",map.get("customer_name")+"");
+                        myEdit.putString("customer_name",map.get("customer_name")+"");
                         myEdit.putString("customer_pincode", map.get("customer_pincode")+"");
                         myEdit.putString("customer_emailid", map.get("customer_emailid")+"");
                         myEdit.putString("customer_address",  map.get("customer_address")+"");

@@ -8,18 +8,20 @@
 
     android:orientation="vertical"
     android:gravity="top"
-    android:layout_marginTop="50px"
+    android:layout_marginTop="0px"
+
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <!-- Circular Image View  -->
  <LinearLayout
+
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
      android:orientation="horizontal"
 
-     android:paddingTop="40sp"
+     android:paddingTop="50dp"
      android:paddingBottom="20sp"
-     android:background="#E8E4E4">
+     android:background="#FFBB86FC">
      <androidx.cardview.widget.CardView
          android:layout_width="60dp"
          android:layout_height="60dp"
@@ -36,7 +38,7 @@
              android:layout_height="match_parent"
              android:layout_width="match_parent"
              android:id="@+id/imageView1"
-             android:src="@drawable/logo2"
+             android:src="@drawable/user"
              android:layout_alignParentTop="true"
              android:layout_centerHorizontal="true">
          </ImageView>
@@ -51,15 +53,16 @@
              android:layout_height="wrap_content"
              android:text="Somu"
              android:layout_marginTop="7sp"
-             android:textColor="@color/black"
-             android:textSize="20dp"
+             android:textColor="#FFFFFF"
+             android:textSize="20sp"
              android:fontFamily="@font/productsans_bold"/>
          <TextView
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:text="gvit234@gmail.com"
-             android:textColor="#8F8585"
-             android:textSize="17dp"
+             android:textColor="#FFFFFF"
+             android:textSize="17sp"
+             android:alpha="0.7"
              android:fontFamily="@font/productsans_regular"/>
 
      </LinearLayout>
@@ -67,6 +70,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="3dp"
+        android:alpha="0.6"
         android:background="#9F9B9B"/>
 
 <!--    <com.google.android.material.navigation.NavigationView-->

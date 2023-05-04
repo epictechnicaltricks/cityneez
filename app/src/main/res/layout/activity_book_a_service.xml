@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_color"
+    android:background="@color/lite_bg_color"
     android:padding="8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:background="@color/lite_bg_color"
+                android:background="@color/bg_color"
                 android:elevation="10dp"
                 android:id="@+id/l"
                 android:gravity="center"

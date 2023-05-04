@@ -29,9 +29,12 @@
 
                 android:background="@color/cardview_shadow_start_color"/>
 
-
+            <FrameLayout
+                android:id="@+id/frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/toolbar" />
         </RelativeLayout>
-
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/nav"
             android:layout_gravity="start"
@@ -51,12 +54,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/viewpager1"
                     android:layout_width="match_parent"
@@ -68,12 +69,6 @@
                 android:gravity="bottom"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <FrameLayout
-                    android:id="@+id/frame"
-                    android:visibility="gone"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    />
                 <com.google.android.material.bottomnavigation.BottomNavigationView
                     app:labelVisibilityMode="labeled"
                     android:id="@+id/bottomnavigation1"

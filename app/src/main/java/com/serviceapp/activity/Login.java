@@ -26,6 +26,7 @@ import com.serviceapp.RequestNetwork;
 import com.serviceapp.RequestNetworkController;
 import com.serviceapp.Util;
 import com.serviceapp.new_design.activity.LayoutActivity;
+import com.serviceapp.new_design.activity.MainActivityhome;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -42,6 +43,10 @@ public class Login extends AppCompatActivity {
 
     private RequestNetwork login_api;
     private RequestNetwork.RequestListener _login_api_listener;
+
+    private RequestNetwork fetch_api;
+    private  RequestNetwork.RequestListener _fetch_api_listener;
+
 
     HashMap<String,Object> map = new HashMap<>();
 
@@ -122,7 +127,8 @@ try {
 
         Intent i = new Intent();
   //      i.setClass(getApplicationContext(), HomeActivity.class);
-        i.setClass(getApplicationContext(), LayoutActivity.class);
+  //      i.setClass(getApplicationContext(), LayoutActivity.class);
+        i.setClass(getApplicationContext(), MainActivityhome.class);
         startActivity(i);
         finish();
     }

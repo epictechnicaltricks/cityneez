@@ -30,6 +30,7 @@ import com.serviceapp.activity.Book_Service_Activity;
 
 import com.serviceapp.new_design.activity.CouponActivity;
 import com.serviceapp.new_design.activity.LayoutActivity;
+import com.serviceapp.new_design.activity.MainActivityhome;
 import com.serviceapp.new_design.activity.Notification;
 import com.serviceapp.new_design.activity.Product_details_activity;
 import com.serviceapp.new_design.activity.Search_activity;
@@ -188,7 +189,9 @@ menu = _view.findViewById(R.id.menu);
 		@Override
 		public void onClick(View view) {
 			//Util.showMessage(getContext(), "Hello");
-			((LayoutActivity) requireActivity()).openDrawer();
+			((MainActivityhome) requireActivity()).openDrawer();
+		//	((LayoutActivity) requireActivity()).openDrawer();
+			//((MainActivityhome) require
 		}
 	});
 

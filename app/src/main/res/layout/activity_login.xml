@@ -93,6 +93,7 @@
                 app:passwordToggleTint="@color/black"
                 android:layout_marginLeft="10dp">
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:fontFamily="@font/productsans_regular"
                     android:paddingStart="6dp"
                     android:paddingEnd="0dp"
                     android:inputType="textPassword"
@@ -112,10 +113,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:gravity="end"
-            android:fontFamily="@font/productsans_regular"
+            android:fontFamily="@font/dmsansbold"
             android:text="Forgot password?"
             android:textColor='@color/text_color'
-            android:textSize="19sp"
+            android:textSize="15sp"
             android:layout_margin="10dp"/>
 
         <Button
@@ -128,7 +129,7 @@
             android:padding="13dp"
             android:layout_margin="10dp"
             android:text="log In"
-            android:fontFamily="@font/dmsansmedium"
+            android:fontFamily="@font/dmsansbold"
             android:textSize="15sp"
             app:cornerRadius="10sp" />
         <TextView
@@ -138,10 +139,10 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Continue as a guest"
-            android:textSize="18sp"
+            android:text="GUEST USER"
+            android:textSize="15sp"
             android:layout_gravity="center"
-            android:fontFamily="@font/dmsansmedium"
+            android:fontFamily="@font/dmsansbold"
             android:layout_marginTop="15dp"
             android:textColor="#fff"
             android:background="@drawable/guest"

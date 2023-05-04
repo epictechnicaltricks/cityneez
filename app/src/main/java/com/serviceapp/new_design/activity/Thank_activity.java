@@ -28,7 +28,7 @@ public class Thank_activity extends AppCompatActivity {
     }
 
     public void button(View view) {
-        Intent intent= new Intent(getApplicationContext(), LayoutActivity.class);
+        Intent intent= new Intent(getApplicationContext(), MainActivityhome.class);
         startActivity(intent);
     }
 }
